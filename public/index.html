@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Emerald Horizon Ventures — Empowering Schools. Inspiring Students. A Hong Kong-based education group operating study tours, student placement, international competitions, and publishing across Asia." />
+<title>Emerald Horizon Ventures</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --forest:     #1A3C34;
+    --teal:       #0D7A5F;
+    --mint:       #3DBE8C;
+    --gold:       #F4B942;
+    --cream:      #F8F5EF;
+    --white:      #FFFFFF;
+    --charcoal:   #1E2C24;
+    --slate:      #4A6258;
+    --light-mint: #D4F0E5;
+    --border:     rgba(61,190,140,.18);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--charcoal); color: var(--white); overflow-x: hidden; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 56px;
+    background: rgba(26,60,52,.96); backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px; text-decoration: none;
+  }
+  .logo-mark {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: linear-gradient(135deg, var(--teal), var(--mint));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 16px; color: var(--white); font-weight: 700;
+    flex-shrink: 0;
+  }
+  .logo-text { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--white); line-height: 1.2; }
+  .logo-text span { color: var(--gold); }
+  .logo-sub { font-size: 9px; color: var(--mint); letter-spacing: .1em; text-transform: uppercase; display: block; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { font-size: 13px; color: var(--light-mint); text-decoration: none; font-weight: 500; transition: color .2s; }
+  .nav-links a:hover { color: var(--mint); }
+  .nav-cta {
+    background: var(--gold); color: var(--charcoal); font-size: 13px; font-weight: 700;
+    padding: 10px 22px; border-radius: 6px; text-decoration: none; transition: opacity .2s;
+  }
+  .nav-cta:hover { opacity: .85; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    background: var(--forest); position: relative; overflow: hidden;
+  }
+  .hero-bg-grid {
+    position: absolute; inset: 0; opacity: .04;
+    background-image: linear-gradient(var(--mint) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--mint) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-orb {
+    position: absolute; border-radius: 50%; filter: blur(90px); pointer-events: none;
+  }
+  .orb1 { width: 700px; height: 700px; background: rgba(13,122,95,.22); top: -200px; right: -150px; }
+  .orb2 { width: 400px; height: 400px; background: rgba(244,185,66,.1); bottom: -100px; left: -80px; }
+  .gold-rule { position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--gold); }
+
+  .hero-inner {
+    position: relative; z-index: 2;
+    max-width: 1180px; margin: 0 auto; padding: 140px 56px 100px;
+    width: 100%;
+    display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: center;
+  }
+  @media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; padding: 120px 24px 80px; } }
+
+  .hero-left {}
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(244,185,66,.12); border: 1px solid rgba(244,185,66,.35);
+    color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: .12em;
+    text-transform: uppercase; padding: 7px 16px; border-radius: 100px; margin-bottom: 32px;
+  }
+  .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(44px, 5.5vw, 76px);
+    line-height: 1.06; color: var(--white); margin-bottom: 10px;
+  }
+  h1 em { color: var(--mint); font-style: normal; }
+  .tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(15px, 2vw, 19px);
+    color: var(--gold); letter-spacing: .04em; margin-bottom: 24px;
+    font-style: italic;
+  }
+  .hero-desc {
+    font-size: 16px; color: var(--light-mint); max-width: 520px;
+    line-height: 1.8; margin-bottom: 44px; font-weight: 300;
+  }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 56px; }
+  .btn-gold {
+    background: var(--gold); color: var(--charcoal); font-weight: 700;
+    font-size: 14px; padding: 15px 30px; border-radius: 7px; text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(244,185,66,.3); }
+  .btn-outline {
+    background: transparent; color: var(--mint); border: 1.5px solid var(--mint);
+    font-weight: 500; font-size: 14px; padding: 14px 28px; border-radius: 7px;
+    text-decoration: none; transition: background .2s, color .2s;
+  }
+  .btn-outline:hover { background: var(--mint); color: var(--forest); }
+
+  /* HQ badge */
+  .hq-strip {
+    display: inline-flex; gap: 24px; align-items: center;
+    border-top: 1px solid rgba(255,255,255,.1); padding-top: 28px;
+  }
+  .hq-item { display: flex; flex-direction: column; }
+  .hq-val { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--gold); line-height: 1; }
+  .hq-lbl { font-size: 10px; color: var(--mint); letter-spacing: .1em; text-transform: uppercase; margin-top: 3px; }
+  .hq-sep { width: 1px; height: 36px; background: rgba(255,255,255,.12); }
+
+  /* Hero right — venture preview */
+  .hero-right { display: flex; flex-direction: column; gap: 12px; }
+  @media (max-width: 900px) { .hero-right { display: none; } }
+  .venture-preview {
+    background: rgba(255,255,255,.05); border: 1px solid var(--border);
+    border-radius: 12px; padding: 16px 20px;
+    display: flex; align-items: center; gap: 14px;
+    transition: background .2s, transform .2s; text-decoration: none;
+  }
+  .venture-preview:hover { background: rgba(61,190,140,.08); transform: translateX(4px); }
+  .vp-icon {
+    width: 42px; height: 42px; border-radius: 10px; display: flex;
+    align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
+  }
+  .vp-icon.tours   { background: rgba(13,122,95,.4); }
+  .vp-icon.place   { background: rgba(27,94,155,.4); }
+  .vp-icon.comp    { background: rgba(244,185,66,.2); }
+  .vp-icon.publish { background: rgba(139,92,246,.3); }
+  .vp-text {}
+  .vp-name { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 2px; }
+  .vp-desc { font-size: 11px; color: rgba(255,255,255,.45); }
+  .vp-arrow { margin-left: auto; color: rgba(255,255,255,.25); font-size: 16px; flex-shrink: 0; }
+  .venture-preview:hover .vp-arrow { color: var(--mint); }
+
+  /* ── ABOUT STRIP ── */
+  .about-strip {
+    background: var(--charcoal);
+    padding: 72px 56px;
+    border-top: 1px solid rgba(255,255,255,.06);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .about-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+  }
+  @media (max-width: 768px) { .about-inner { grid-template-columns: 1fr; gap: 36px; } }
+  .about-label { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+  .about-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 38px); color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+  .about-body { font-size: 15px; color: #8AADA3; line-height: 1.8; font-weight: 300; }
+  .about-body strong { color: var(--light-mint); font-weight: 600; }
+  .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .astat {
+    background: rgba(255,255,255,.04); border: 1px solid var(--border);
+    border-radius: 12px; padding: 22px 20px;
+  }
+  .astat-num { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+  .astat-lbl { font-size: 12px; color: #8AADA3; line-height: 1.5; }
+
+  /* ── VENTURES ── */
+  .ventures {
+    background: var(--forest);
+    padding: 96px 56px;
+  }
+  .ventures-inner { max-width: 1180px; margin: 0 auto; }
+  .sec-label { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
+  .sec-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 44px); color: var(--white); line-height: 1.15; margin-bottom: 16px; }
+  .sec-sub { font-size: 15px; color: var(--light-mint); max-width: 560px; line-height: 1.75; margin-bottom: 56px; font-weight: 300; }
+
+  .ventures-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+  }
+  @media (max-width: 768px) { .ventures-grid { grid-template-columns: 1fr; } }
+
+  .venture-card {
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid rgba(255,255,255,.08);
+    transition: transform .25s, box-shadow .25s;
+    text-decoration: none; display: block;
+    background: rgba(255,255,255,.04);
+  }
+  .venture-card:hover { transform: translateY(-5px); box-shadow: 0 24px 56px rgba(0,0,0,.35); }
+  .vc-header { padding: 28px 28px 22px; position: relative; overflow: hidden; }
+  .vc-header::after {
+    content: ''; position: absolute; right: -20px; top: -20px;
+    width: 120px; height: 120px; border-radius: 50%; opacity: .12;
+  }
+  .vc-header.tours   { background: linear-gradient(135deg, #1A3C34, #0D5E40); border-bottom: 2px solid var(--mint); }
+  .vc-header.tours::after { background: var(--mint); }
+  .vc-header.place   { background: linear-gradient(135deg, #1A2B4A, #1B4A7A); border-bottom: 2px solid #4CA3DD; }
+  .vc-header.place::after { background: #4CA3DD; }
+  .vc-header.comp    { background: linear-gradient(135deg, #2A1E00, #3D2D00); border-bottom: 2px solid var(--gold); }
+  .vc-header.comp::after { background: var(--gold); }
+  .vc-header.publish { background: linear-gradient(135deg, #1E1A3A, #2D2050); border-bottom: 2px solid #A78BFA; }
+  .vc-header.publish::after { background: #A78BFA; }
+
+  .vc-icon { font-size: 34px; margin-bottom: 14px; display: block; position: relative; z-index: 1; }
+  .vc-num { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px; position: relative; z-index: 1; }
+  .vc-header.tours .vc-num   { color: var(--mint); }
+  .vc-header.place .vc-num   { color: #4CA3DD; }
+  .vc-header.comp .vc-num    { color: var(--gold); }
+  .vc-header.publish .vc-num { color: #A78BFA; }
+  .vc-name { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin-bottom: 6px; position: relative; z-index: 1; }
+  .vc-tagline { font-size: 12px; position: relative; z-index: 1; font-style: italic; }
+  .vc-header.tours .vc-tagline   { color: rgba(61,190,140,.7); }
+  .vc-header.place .vc-tagline   { color: rgba(76,163,221,.7); }
+  .vc-header.comp .vc-tagline    { color: rgba(244,185,66,.7); }
+  .vc-header.publish .vc-tagline { color: rgba(167,139,250,.7); }
+
+  .vc-body { padding: 22px 28px 26px; background: rgba(0,0,0,.2); }
+  .vc-desc { font-size: 13.5px; color: #8AADA3; line-height: 1.75; margin-bottom: 18px; }
+  .vc-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 20px; }
+  .vc-pill { font-size: 11px; padding: 4px 11px; border-radius: 100px; font-weight: 500; }
+  .tours .vc-pill   { background: rgba(13,122,95,.25); color: var(--mint); }
+  .place .vc-pill   { background: rgba(27,94,155,.25); color: #4CA3DD; }
+  .comp .vc-pill    { background: rgba(244,185,66,.15); color: var(--gold); }
+  .publish .vc-pill { background: rgba(167,139,250,.15); color: #A78BFA; }
+  .vc-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600; text-decoration: none;
+    transition: gap .2s;
+  }
+  .tours .vc-link   { color: var(--mint); }
+  .place .vc-link   { color: #4CA3DD; }
+  .comp .vc-link    { color: var(--gold); }
+  .publish .vc-link { color: #A78BFA; }
+  .venture-card:hover .vc-link { gap: 10px; }
+
+  /* ── FOUNDER ── */
+  .founder {
+    background: var(--charcoal); padding: 96px 56px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+  .founder-inner {
+    max-width: 1180px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 380px; gap: 72px; align-items: start;
+  }
+  @media (max-width: 900px) { .founder-inner { grid-template-columns: 1fr; } }
+  .founder-body { font-size: 15px; color: #8AADA3; line-height: 1.85; font-weight: 300; }
+  .founder-body p { margin-bottom: 18px; }
+  .founder-body strong { color: var(--light-mint); font-weight: 600; }
+  .founder-sig { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin-top: 28px; }
+  .founder-sig span { display: block; font-family: 'DM Sans', sans-serif; font-size: 12px; color: var(--mint); letter-spacing: .08em; text-transform: uppercase; margin-top: 4px; font-style: normal; }
+
+  .founder-card {
+    background: rgba(255,255,255,.04); border: 1px solid var(--border);
+    border-radius: 16px; overflow: hidden; position: sticky; top: 100px;
+  }
+  .fc-top { background: var(--forest); padding: 28px 24px; text-align: center; }
+  .fc-avatar {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal), var(--mint));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 28px; color: var(--white);
+    margin: 0 auto 14px; border: 3px solid rgba(61,190,140,.4);
+  }
+  .fc-name { font-family: 'Playfair Display', serif; font-size: 19px; color: var(--white); margin-bottom: 4px; }
+  .fc-role { font-size: 11px; color: var(--mint); letter-spacing: .08em; text-transform: uppercase; }
+  .fc-bottom { padding: 20px 24px; }
+  .fc-item { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .fc-item:last-child { margin-bottom: 0; }
+  .fc-item-icon { font-size: 14px; flex-shrink: 0; }
+  .fc-item-text { font-size: 12.5px; color: #8AADA3; }
+  .fc-item-text strong { color: var(--light-mint); }
+
+  /* ── CONTACT ── */
+  .contact {
+    background: var(--forest); padding: 96px 56px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .contact::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 50% 70% at 50% 50%, rgba(61,190,140,.12) 0%, transparent 70%);
+  }
+  .contact-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+  .contact h2 { font-family: 'Playfair Display', serif; font-size: clamp(30px, 4vw, 52px); color: var(--white); margin-bottom: 16px; }
+  .contact p { font-size: 16px; color: var(--light-mint); margin-bottom: 48px; font-weight: 300; line-height: 1.75; }
+  .contact-chips { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 44px; }
+  .chip {
+    background: rgba(255,255,255,.06); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 22px; text-align: left; min-width: 190px;
+  }
+  .chip-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--mint); margin-bottom: 5px; }
+  .chip-val { font-size: 14px; color: var(--white); font-weight: 500; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #131A16; padding: 32px 56px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    border-top: 1px solid rgba(255,255,255,.06);
+  }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--white); }
+  .footer-logo span { color: var(--gold); }
+  .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+  .footer-links a { font-size: 12px; color: var(--slate); text-decoration: none; transition: color .2s; }
+  .footer-links a:hover { color: var(--mint); }
+  .footer-copy { font-size: 11px; color: #3A5048; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .fade-up { opacity: 0; animation: fadeUp .7s forwards; }
+  .d1 { animation-delay: .1s; } .d2 { animation-delay: .22s; }
+  .d3 { animation-delay: .34s; } .d4 { animation-delay: .46s; }
+
+  @media (max-width: 768px) {
+    nav { padding: 14px 20px; } .nav-links { display: none; }
+    .about-strip, .ventures, .founder, .contact { padding: 64px 20px; }
+    footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+    .hq-strip { flex-wrap: wrap; gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="logo-mark">EH</div>
+    <div class="logo-text">
+      Emerald <span>Horizon</span>
+      <span class="logo-sub">Ventures · Hong Kong</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#ventures">Our Ventures</a>
+    <a href="#founder">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Get in Touch →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="gold-rule"></div>
+  <div class="hero-orb orb1"></div>
+  <div class="hero-orb orb2"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge fade-up"><span class="dot"></span> Hong Kong Registered · Operating Across Asia</div>
+      <h1 class="fade-up d1">Emerald<br><em>Horizon</em><br>Ventures</h1>
+      <p class="tagline fade-up d2">Empowering Schools. Inspiring Students.</p>
+      <p class="hero-desc fade-up d2">A Hong Kong-based education group building programs, pathways, and platforms that open doors for students and schools across Asia.</p>
+      <div class="hero-actions fade-up d3">
+        <a href="#ventures" class="btn-gold">Explore Our Ventures →</a>
+        <a href="#contact" class="btn-outline">Partner With Us</a>
+      </div>
+      <div class="hq-strip fade-up d4">
+        <div class="hq-item"><div class="hq-val">4</div><div class="hq-lbl">Ventures</div></div>
+        <div class="hq-sep"></div>
+        <div class="hq-item"><div class="hq-val">3</div><div class="hq-lbl">Countries</div></div>
+        <div class="hq-sep"></div>
+        <div class="hq-item"><div class="hq-val">B2B</div><div class="hq-lbl">Focus</div></div>
+        <div class="hq-sep"></div>
+        <div class="hq-item"><div class="hq-val">HK</div><div class="hq-lbl">Registered</div></div>
+      </div>
+    </div>
+
+    <!-- Venture preview sidebar -->
+    <div class="hero-right">
+      <a href="#tours" class="venture-preview">
+        <div class="vp-icon tours">🌿</div>
+        <div class="vp-text">
+          <div class="vp-name">AI Study Tours</div>
+          <div class="vp-desc">Chiang Mai & Bangkok · 7-day programs</div>
+        </div>
+        <div class="vp-arrow">→</div>
+      </a>
+      <a href="#placement" class="venture-preview">
+        <div class="vp-icon place">🏫</div>
+        <div class="vp-text">
+          <div class="vp-name">Student Placement</div>
+          <div class="vp-desc">Myanmar & China → Thailand K–12</div>
+        </div>
+        <div class="vp-arrow">→</div>
+      </a>
+      <a href="#competition" class="venture-preview">
+        <div class="vp-icon comp">🏆</div>
+        <div class="vp-text">
+          <div class="vp-name">A-ISPC Competition</div>
+          <div class="vp-desc">International AI Science · KL Finals</div>
+        </div>
+        <div class="vp-arrow">→</div>
+      </a>
+      <a href="#publishing" class="venture-preview">
+        <div class="vp-icon publish">📚</div>
+        <div class="vp-text">
+          <div class="vp-name">Publishing</div>
+          <div class="vp-desc">Education books & resources</div>
+        </div>
+        <div class="vp-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div class="about-inner">
+    <div>
+      <div class="about-label">Who We Are</div>
+      <h2 class="about-title">An Education Group Built for<br>the Asian Century</h2>
+      <p class="about-body">
+        Emerald Horizon Ventures is a <strong>Hong Kong-registered education company</strong> operating across Southeast and East Asia. We build B2B programs and platforms that help schools deliver better outcomes — and students access better opportunities.<br><br>
+        From <strong>AI-powered study tours</strong> in Thailand to <strong>international school placements</strong> for Myanmar and Chinese families, every venture we run connects education to real-world impact.
+      </p>
+    </div>
+    <div class="about-stats">
+      <div class="astat"><div class="astat-num">7</div><div class="astat-lbl">Days. Full AI curriculum delivered on-the-ground</div></div>
+      <div class="astat"><div class="astat-num">2</div><div class="astat-lbl">Host schools in Bangkok & Chiang Mai</div></div>
+      <div class="astat"><div class="astat-num">96+</div><div class="astat-lbl">Countries reached through A-ISPC competition</div></div>
+      <div class="astat"><div class="astat-num">K–12</div><div class="astat-lbl">Student placement pipeline across Thailand</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VENTURES -->
+<section class="ventures" id="ventures">
+  <div class="ventures-inner">
+    <div class="sec-label">What We Do</div>
+    <h2 class="sec-title">Our Four Ventures</h2>
+    <p class="sec-sub">Each venture is a standalone operation with its own market, model, and mission — unified under one company with one standard of excellence.</p>
+
+    <div class="ventures-grid">
+
+      <!-- 1. Study Tours -->
+      <a href="https://emeraldhv.com/tours" class="venture-card tours" id="tours">
+        <div class="vc-header tours">
+          <span class="vc-icon">🌿</span>
+          <div class="vc-num">Venture 01</div>
+          <div class="vc-name">AI Study Tours</div>
+          <div class="vc-tagline">Chiang Mai & Bangkok, Thailand</div>
+        </div>
+        <div class="vc-body">
+          <p class="vc-desc">7-day all-inclusive AI, Vlogging & STEM programs for Language Centers and Bilingual Schools in Hanoi. Hosted at Wichai Wittaya School (Chiang Mai) and Chindamanee School (Bangkok). Fully managed — zero admin for partner schools.</p>
+          <div class="vc-pills">
+            <span class="vc-pill">B2B Packages</span>
+            <span class="vc-pill">$695 – $899 / student</span>
+            <span class="vc-pill">Halal-certified</span>
+            <span class="vc-pill">1 Free Chaperone</span>
+          </div>
+          <span class="vc-link">View Program Details →</span>
+        </div>
+      </a>
+
+      <!-- 2. Student Placement -->
+      <a href="https://enrollthailand.com" target="_blank" class="venture-card place" id="placement">
+        <div class="vc-header place">
+          <span class="vc-icon">🏫</span>
+          <div class="vc-num">Venture 02</div>
+          <div class="vc-name">Student Placement</div>
+          <div class="vc-tagline">Myanmar & China → Thailand International Schools</div>
+        </div>
+        <div class="vc-body">
+          <p class="vc-desc">We guide K–12 families from Myanmar and China through the full admissions process into international and bilingual schools in Bangkok and Chiang Mai — from school selection and applications to arrival support.</p>
+          <div class="vc-pills">
+            <span class="vc-pill">K–12 Admissions</span>
+            <span class="vc-pill">Bangkok & Chiang Mai</span>
+            <span class="vc-pill">Myanmar & China</span>
+            <span class="vc-pill">End-to-end Support</span>
+          </div>
+          <span class="vc-link">Visit enrollthailand.com →</span>
+        </div>
+      </a>
+
+      <!-- 3. Competition -->
+      <a href="https://aispc2026.org" target="_blank" class="venture-card comp" id="competition">
+        <div class="vc-header comp">
+          <span class="vc-icon">🏆</span>
+          <div class="vc-num">Venture 03</div>
+          <div class="vc-name">A-ISPC Competition</div>
+          <div class="vc-tagline">International AI-Assisted Science Project Competition</div>
+        </div>
+        <div class="vc-body">
+          <p class="vc-desc">The world's first international secondary school competition focused on science projects that meaningfully integrate AI as a research tool. Online preliminary round, with finals held in Kuala Lumpur. Open to schools worldwide.</p>
+          <div class="vc-pills">
+            <span class="vc-pill">96+ Countries</span>
+            <span class="vc-pill">Ages 12–18</span>
+            <span class="vc-pill">KL Finals · June 2026</span>
+            <span class="vc-pill">$80 / Team</span>
+          </div>
+          <span class="vc-link">Visit aispc2026.org →</span>
+        </div>
+      </a>
+
+      <!-- 4. Publishing -->
+      <a href="https://nurbakytbooks.com" target="_blank" class="venture-card publish" id="publishing">
+        <div class="vc-header publish">
+          <span class="vc-icon">📚</span>
+          <div class="vc-num">Venture 04</div>
+          <div class="vc-name">Publishing</div>
+          <div class="vc-tagline">Education Books & Resources for Schools</div>
+        </div>
+        <div class="vc-body">
+          <p class="vc-desc">Books, guides, and professional resources written for school leaders, educators, and education consultants. Grounded in real experience transforming schools across Central Asia, Southeast Asia, and beyond.</p>
+          <div class="vc-pills">
+            <span class="vc-pill">School Leadership</span>
+            <span class="vc-pill">AI in Education</span>
+            <span class="vc-pill">Cambridge & CIS</span>
+            <span class="vc-pill">Practitioner-written</span>
+          </div>
+          <span class="vc-link">Visit nurbakytbooks.com →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder" id="founder">
+  <div class="founder-inner">
+    <div>
+      <div class="about-label">The Founder</div>
+      <h2 class="about-title" style="color:var(--white)">Built by Someone<br>Who's Been Inside Schools</h2>
+      <div class="founder-body">
+        <p>Emerald Horizon Ventures was founded by <strong>Nurbakyt Boltayev</strong> — an international education consultant, Cambridge & CIS specialist, and author with hands-on experience transforming schools across Asia.</p>
+        <p>Every venture under the EHV umbrella was built from a simple belief: <strong>education is the most powerful force for changing a life's trajectory</strong> — and the institutions that deliver it deserve better tools, better programs, and better partners.</p>
+        <p>From designing AI study tours that land students in Thailand for a week of real learning, to placing K–12 students from Myanmar and China into world-class international schools, to running a global science competition — the common thread is always the same: <strong>connecting the right opportunity to the right student.</strong></p>
+      </div>
+      <div class="founder-sig">
+        Nurbakyt Boltayev
+        <span>Founder & CEO · Emerald Horizon Ventures</span>
+      </div>
+    </div>
+    <div>
+      <div class="founder-card">
+        <div class="fc-top">
+          <div class="fc-avatar">N</div>
+          <div class="fc-name">Nurbakyt Boltayev</div>
+          <div class="fc-role">Founder & CEO</div>
+        </div>
+        <div class="fc-bottom">
+          <div class="fc-item"><span class="fc-item-icon">🏢</span><div class="fc-item-text"><strong>Emerald Horizon Ventures</strong><br>Hong Kong Registered</div></div>
+          <div class="fc-item"><span class="fc-item-icon">🎓</span><div class="fc-item-text"><strong>Cambridge & CIS Specialist</strong><br>School Transformation Consultant</div></div>
+          <div class="fc-item"><span class="fc-item-icon">🌏</span><div class="fc-item-text"><strong>Operating across</strong><br>Thailand · Vietnam · Malaysia · Myanmar</div></div>
+          <div class="fc-item"><span class="fc-item-icon">📧</span><div class="fc-item-text"><strong>emeraldhv@nurbakyt.com</strong></div></div>
+          <div class="fc-item"><span class="fc-item-icon">🌐</span><div class="fc-item-text"><strong>nurbakyt.com</strong> — consulting profile</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="sec-label" style="color:var(--gold);margin-bottom:16px">Get In Touch</div>
+    <h2>Partner With<br>Emerald Horizon</h2>
+    <p>Whether you're a school looking to add a study tour program, a family seeking international school placement, or an institution wanting to join A-ISPC — we'd love to hear from you.</p>
+    <div class="contact-chips">
+      <div class="chip"><div class="chip-label">Email</div><div class="chip-val">emeraldhv@nurbakyt.com</div></div>
+      <div class="chip"><div class="chip-label">Study Tours</div><div class="chip-val">$695 – $899 / student</div></div>
+      <div class="chip"><div class="chip-label">Placement</div><div class="chip-val">Myanmar & China → Thailand</div></div>
+    </div>
+    <a href="mailto:emeraldhv@nurbakyt.com" class="btn-gold" style="font-size:15px;padding:17px 38px">Send Us a Message →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Emerald <span>Horizon</span> Ventures</div>
+  <div class="footer-links">
+    <a href="https://nurbakyt.com" target="_blank">nurbakyt.com</a>
+    <a href="https://aispc2026.org" target="_blank">aispc2026.org</a>
+    <a href="https://enrollthailand.com" target="_blank">enrollthailand.com</a>
+    <a href="https://nurbakytbooks.com" target="_blank">nurbakytbooks.com</a>
+  </div>
+  <div class="footer-copy">© 2025 Emerald Horizon Ventures · Registered in Hong Kong</div>
+</footer>
+
+</body>
+</html>
