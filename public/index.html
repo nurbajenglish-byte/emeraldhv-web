@@ -3,324 +3,396 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Emerald Horizon Ventures — AI Study Tour Chiang Mai</title>
+<title>Emerald Horizon Ventures — Empowering Schools. Inspiring Students.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --forest: #1A3C34; --teal: #0D7A5F; --mint: #3DBE8C; --gold: #F4B942;
-    --cream: #F8F5EF; --white: #FFFFFF; --charcoal: #1E2C24; --slate: #4A6258; --light-mint: #D4F0E5;
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); overflow-x: hidden; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --forest: #1A3C34;
+  --teal: #0D7A5F;
+  --mint: #3DBE8C;
+  --gold: #F4B942;
+  --cream: #F8F5EF;
+  --white: #FFFFFF;
+  --charcoal: #1E2C24;
+  --slate: #4A6258;
+  --light-mint: #D4F0E5;
+  --off-white: #FAFAF8;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--off-white); color: var(--charcoal); overflow-x: hidden; }
 
-  /* NAV */
-  nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:18px 48px; background:rgba(26,60,52,.93); backdrop-filter:blur(12px); border-bottom:1px solid rgba(61,190,140,.15); }
-  .nav-logo { font-family:'Playfair Display',serif; font-size:20px; color:var(--white); }
-  .nav-logo span { color:var(--gold); }
-  .nav-links { display:flex; gap:28px; }
-  .nav-links a { font-size:13px; color:var(--light-mint); text-decoration:none; font-weight:500; transition:color .2s; }
-  .nav-links a:hover { color:var(--mint); }
-  .nav-cta { background:var(--gold); color:var(--charcoal); font-size:13px; font-weight:700; padding:10px 22px; border-radius:6px; text-decoration:none; transition:opacity .2s; }
-  .nav-cta:hover { opacity:.85; }
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 48px;
+  background: rgba(26,60,52,.96); backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(61,190,140,.12);
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-logo img { height: 36px; width: auto; }
+.nav-logo-text { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--white); }
+.nav-logo-text span { color: var(--gold); }
+.nav-links { display: flex; gap: 32px; }
+.nav-links a { font-size: 13px; color: var(--light-mint); text-decoration: none; font-weight: 500; letter-spacing: .02em; transition: color .2s; }
+.nav-links a:hover { color: var(--mint); }
+.nav-cta { background: var(--gold); color: var(--charcoal); font-size: 13px; font-weight: 700; padding: 10px 22px; border-radius: 6px; text-decoration: none; transition: opacity .2s; }
+.nav-cta:hover { opacity: .85; }
 
-  /* HERO */
-  .hero { min-height:100vh; background:var(--forest); position:relative; display:flex; align-items:center; overflow:hidden; }
-  .hero-orb { position:absolute; border-radius:50%; filter:blur(80px); pointer-events:none; }
-  .orb1 { width:600px; height:600px; background:rgba(61,190,140,.18); top:-120px; right:-100px; }
-  .orb2 { width:400px; height:400px; background:rgba(244,185,66,.12); bottom:-80px; left:-60px; }
-  .gold-bar { position:absolute; left:0; top:0; bottom:0; width:6px; background:var(--gold); }
-  .hero-inner { position:relative; z-index:2; max-width:1140px; margin:0 auto; padding:120px 48px 80px; width:100%; }
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background: var(--forest);
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  padding: 140px 48px 100px;
+}
+.hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 50% 60% at 80% 40%, rgba(61,190,140,.12) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 10% 80%, rgba(244,185,66,.08) 0%, transparent 60%);
+}
+.gold-line { position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--gold); }
+.hero-inner { position: relative; z-index: 2; max-width: 1140px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.hero-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 5.5vw, 72px); color: var(--white); line-height: 1.08; margin-bottom: 24px; }
+h1 em { color: var(--mint); font-style: normal; }
+.hero-tagline { font-size: 17px; color: var(--light-mint); line-height: 1.7; margin-bottom: 20px; font-weight: 300; max-width: 480px; }
+.hero-sub-detail { font-size: 13px; color: var(--slate); line-height: 1.6; margin-bottom: 40px; }
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-gold { background: var(--gold); color: var(--charcoal); font-weight: 700; font-size: 14px; padding: 14px 30px; border-radius: 6px; text-decoration: none; transition: transform .2s, box-shadow .2s; }
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(244,185,66,.3); }
+.btn-outline { border: 1.5px solid rgba(61,190,140,.5); color: var(--mint); font-size: 14px; font-weight: 500; padding: 13px 26px; border-radius: 6px; text-decoration: none; transition: border-color .2s, color .2s; }
+.btn-outline:hover { border-color: var(--mint); color: var(--white); }
 
-  .badge { display:inline-flex; align-items:center; gap:8px; background:rgba(244,185,66,.15); border:1px solid rgba(244,185,66,.4); color:var(--gold); font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; padding:7px 16px; border-radius:100px; margin-bottom:28px; }
-  h1 { font-family:'Playfair Display',serif; font-size:clamp(46px,7vw,88px); color:var(--white); line-height:1.07; max-width:760px; margin-bottom:28px; }
-  h1 em { color:var(--mint); font-style:normal; }
-  .hero-sub { font-size:17px; color:var(--light-mint); max-width:560px; line-height:1.7; margin-bottom:36px; font-weight:300; }
+/* HERO RIGHT — STAT CARDS */
+.hero-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.stat-card { background: rgba(255,255,255,.05); border: 1px solid rgba(61,190,140,.2); border-radius: 10px; padding: 22px 20px; }
+.stat-card .snum { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+.stat-card .slbl { font-size: 11px; color: var(--mint); letter-spacing: .1em; text-transform: uppercase; }
+.stat-card.accent { background: rgba(244,185,66,.08); border-color: rgba(244,185,66,.25); }
 
-  /* Flight strip */
-  .flight-strip { background:rgba(30,44,36,.85); border:1px solid rgba(61,190,140,.35); border-left:4px solid var(--gold); border-radius:8px; padding:18px 24px 14px; max-width:680px; margin-bottom:40px; }
-  .flight-strip .fs-title { font-size:14px; font-weight:700; color:var(--gold); margin-bottom:4px; }
-  .flight-strip .fs-details { font-size:13px; color:var(--light-mint); margin-bottom:12px; }
-  .day-pills { display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
-  .day-pills .dp-label { font-size:11px; font-weight:600; color:var(--slate); text-transform:uppercase; letter-spacing:.08em; margin-right:4px; }
-  .day-pill { font-size:11px; font-weight:700; padding:4px 10px; border-radius:4px; text-transform:uppercase; letter-spacing:.06em; }
-  .day-pill.on  { background:var(--teal); color:var(--white); }
-  .day-pill.off { background:rgba(255,255,255,.05); color:#4A6258; border:1px solid #2A3A34; }
+/* SECTION COMMONS */
+section { padding: 100px 48px; }
+.inner { max-width: 1140px; margin: 0 auto; }
+.section-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 44px); color: var(--forest); line-height: 1.15; margin-bottom: 16px; }
+.section-sub { font-size: 16px; color: var(--slate); max-width: 560px; line-height: 1.7; margin-bottom: 56px; font-weight: 300; }
 
-  .hero-ctas { display:flex; gap:16px; flex-wrap:wrap; margin-bottom:64px; }
-  .btn-primary { background:var(--gold); color:var(--charcoal); font-weight:600; font-size:15px; padding:16px 34px; border-radius:6px; text-decoration:none; transition:transform .2s,box-shadow .2s; display:inline-flex; align-items:center; gap:8px; }
-  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 12px 32px rgba(244,185,66,.35); }
-  .btn-secondary { background:transparent; color:var(--mint); border:1.5px solid var(--mint); font-weight:500; font-size:15px; padding:15px 30px; border-radius:6px; text-decoration:none; transition:background .2s,color .2s; display:inline-flex; align-items:center; gap:8px; }
-  .btn-secondary:hover { background:var(--mint); color:var(--forest); }
+/* WHO WE ARE */
+.who { background: var(--white); }
+.who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.who-text p { font-size: 15px; color: var(--slate); line-height: 1.8; margin-bottom: 20px; }
+.who-text p strong { color: var(--forest); font-weight: 600; }
+.who-pillars { display: flex; flex-direction: column; gap: 16px; }
+.pillar { display: flex; gap: 16px; align-items: flex-start; padding: 20px; background: var(--cream); border-radius: 10px; border-left: 3px solid var(--mint); }
+.pillar:nth-child(2) { border-color: var(--gold); }
+.pillar:nth-child(3) { border-color: var(--teal); }
+.pillar-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.pillar-title { font-size: 14px; font-weight: 700; color: var(--forest); margin-bottom: 4px; }
+.pillar-body { font-size: 13px; color: var(--slate); line-height: 1.6; }
 
-  .hero-stats { display:flex; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,.1); padding-top:36px; }
-  .hero-stat { flex:1 0 140px; padding:0 32px 0 0; border-right:1px solid rgba(255,255,255,.1); margin-right:32px; }
-  .hero-stat:last-child { border-right:none; margin-right:0; }
-  .hero-stat .num { font-family:'Playfair Display',serif; font-size:40px; color:var(--gold); line-height:1; margin-bottom:4px; }
-  .hero-stat .lbl { font-size:12px; color:var(--mint); letter-spacing:.08em; text-transform:uppercase; }
+/* VENTURES */
+.ventures { background: var(--cream); }
+.ventures-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.venture-card {
+  background: var(--white); border-radius: 14px; padding: 36px 32px;
+  border-bottom: 3px solid var(--light-mint);
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+  text-decoration: none; display: block;
+}
+.venture-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,.09); border-color: var(--mint); }
+.venture-card.gold:hover { border-color: var(--gold); }
+.venture-card.coming { opacity: .75; cursor: default; }
+.venture-card.coming:hover { transform: none; box-shadow: none; }
+.v-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 20px; }
+.v-tag.live { background: rgba(61,190,140,.12); color: var(--teal); }
+.v-tag.coming-soon { background: rgba(244,185,66,.12); color: #A87800; }
+.v-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.v-icon { font-size: 32px; margin-bottom: 14px; }
+.v-name { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--forest); margin-bottom: 8px; }
+.v-desc { font-size: 14px; color: var(--slate); line-height: 1.7; margin-bottom: 20px; }
+.v-link { font-size: 13px; font-weight: 600; color: var(--teal); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: gap .2s; }
+.v-link:hover { gap: 10px; }
+.v-link.gold { color: var(--gold); }
+.v-meta { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--cream); }
+.v-meta-item { font-size: 11px; color: var(--slate); display: flex; align-items: center; gap: 5px; }
+.v-meta-item::before { content: '·'; color: var(--mint); font-size: 14px; }
 
-  /* SECTIONS */
-  section { padding:96px 48px; }
-  .inner { max-width:1140px; margin:0 auto; }
-  .section-label { font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); margin-bottom:12px; }
-  .section-title { font-family:'Playfair Display',serif; font-size:clamp(30px,4vw,48px); color:var(--forest); line-height:1.15; margin-bottom:16px; }
-  .section-sub { font-size:16px; color:var(--slate); max-width:580px; line-height:1.7; margin-bottom:52px; }
+/* ABOUT FOUNDER */
+.founder { background: var(--forest); }
+.founder-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: center; }
+.founder-img { width: 100%; border-radius: 12px; aspect-ratio: 3/4; object-fit: cover; border: 2px solid rgba(61,190,140,.3); }
+.founder-img-placeholder { width: 100%; aspect-ratio: 3/4; background: rgba(255,255,255,.06); border: 2px solid rgba(61,190,140,.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+.founder .section-eyebrow { color: var(--gold); }
+.founder .section-title { color: var(--white); }
+.founder-bio { font-size: 15px; color: var(--light-mint); line-height: 1.8; margin-bottom: 16px; font-weight: 300; }
+.founder-bio strong { color: var(--white); font-weight: 500; }
+.founder-links { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+.founder-link { font-size: 13px; font-weight: 600; color: var(--mint); text-decoration: none; border: 1px solid rgba(61,190,140,.3); padding: 8px 18px; border-radius: 6px; transition: background .2s, color .2s; }
+.founder-link:hover { background: var(--mint); color: var(--forest); }
 
-  /* WHY */
-  .why { background:var(--white); }
-  .why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px; }
-  .why-card { background:var(--cream); border-radius:12px; padding:32px 28px; border-left:4px solid var(--mint); transition:transform .2s,box-shadow .2s; }
-  .why-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.08); }
-  .why-card:nth-child(2){border-color:var(--gold);} .why-card:nth-child(3){border-color:var(--teal);} .why-card:nth-child(4){border-color:var(--forest);}
-  .why-icon { font-size:28px; margin-bottom:16px; }
-  .why-title { font-family:'Playfair Display',serif; font-size:20px; color:var(--forest); margin-bottom:10px; }
-  .why-body { font-size:14px; color:var(--slate); line-height:1.7; }
+/* CONTACT */
+.contact { background: var(--white); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.contact-chips { display: flex; flex-direction: column; gap: 14px; }
+.chip { background: var(--cream); border-radius: 10px; padding: 20px 24px; border-left: 3px solid var(--mint); }
+.chip:nth-child(2) { border-color: var(--gold); }
+.chip:nth-child(3) { border-color: var(--teal); }
+.chip-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--teal); margin-bottom: 4px; }
+.chip:nth-child(2) .chip-label { color: #A87800; }
+.chip-val { font-size: 15px; color: var(--forest); font-weight: 500; }
+.contact-text p { font-size: 15px; color: var(--slate); line-height: 1.8; margin-bottom: 16px; }
+.contact-text strong { color: var(--forest); }
 
-  /* SCHEDULE */
-  .schedule { background:var(--forest); }
-  .schedule .section-title { color:var(--white); }
-  .schedule .section-sub { color:var(--light-mint); }
-  .schedule .section-label { color:var(--gold); }
-  .days-scroll { display:flex; gap:16px; overflow-x:auto; padding-bottom:16px; }
-  .days-scroll::-webkit-scrollbar { height:4px; }
-  .days-scroll::-webkit-scrollbar-thumb { background:var(--teal); border-radius:2px; }
-  .day-card { flex:0 0 168px; background:rgba(255,255,255,.06); border:1px solid rgba(61,190,140,.25); border-top:3px solid var(--mint); border-radius:10px; padding:22px 18px; transition:background .2s,transform .2s; }
-  .day-card:hover { background:rgba(61,190,140,.1); transform:translateY(-3px); }
-  .day-card:nth-child(2){border-top-color:var(--gold);} .day-card:nth-child(6){border-top-color:var(--gold);}
-  .day-num { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--mint); margin-bottom:4px; }
-  .day-title { font-family:'Playfair Display',serif; font-size:16px; color:var(--white); margin-bottom:12px; }
-  .day-bullets { list-style:none; display:flex; flex-direction:column; gap:6px; }
-  .day-bullets li { font-size:12px; color:#A8C4BC; display:flex; gap:8px; align-items:flex-start; line-height:1.4; }
-  .day-bullets li::before { content:'›'; color:var(--mint); font-size:14px; margin-top:-1px; flex-shrink:0; }
+/* FOOTER */
+footer { background: var(--charcoal); padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; border-top: 1px solid rgba(255,255,255,.06); }
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--white); }
+.footer-logo span { color: var(--gold); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { font-size: 12px; color: var(--slate); text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: var(--mint); }
+.footer-copy { font-size: 12px; color: var(--slate); width: 100%; text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.04); margin-top: 8px; }
 
-  /* CURRICULUM */
-  .curriculum { background:var(--cream); }
-  .tracks { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
-  .track-card { border-radius:14px; overflow:hidden; background:var(--white); box-shadow:0 4px 24px rgba(0,0,0,.06); transition:transform .2s,box-shadow .2s; }
-  .track-card:hover { transform:translateY(-5px); box-shadow:0 16px 48px rgba(0,0,0,.12); }
-  .track-header { padding:28px 28px 22px; background:var(--forest); }
-  .track-header.gold{background:#2A1E00;} .track-header.teal{background:#001E2A;}
-  .track-emoji { font-size:36px; margin-bottom:12px; }
-  .track-name { font-family:'Playfair Display',serif; font-size:22px; color:var(--white); }
-  .track-tag { display:inline-block; margin-top:8px; background:rgba(255,255,255,.12); color:var(--mint); font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:3px 10px; border-radius:4px; }
-  .track-tag.gold{color:var(--gold);} .track-tag.blue{color:#7EC8E3;}
-  .track-body { padding:24px 28px; }
-  .track-body ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
-  .track-body li { font-size:14px; color:var(--slate); display:flex; gap:10px; align-items:flex-start; line-height:1.5; }
-  .track-body li::before { content:'✓'; color:var(--mint); font-weight:700; flex-shrink:0; margin-top:1px; }
+/* HK BADGE */
+.hk-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(244,185,66,.1); border: 1px solid rgba(244,185,66,.25); color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 24px; }
 
-  /* BENEFITS */
-  .benefits { background:var(--white); }
-  .benefits-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; }
-  .benefit-card { background:var(--cream); border-radius:12px; padding:28px 28px 24px; border-bottom:3px solid var(--light-mint); transition:border-color .2s,transform .2s; }
-  .benefit-card:hover { border-color:var(--mint); transform:translateY(-3px); }
-  .benefit-num { font-family:'Playfair Display',serif; font-size:13px; color:var(--gold); font-weight:700; margin-bottom:8px; letter-spacing:.05em; }
-  .benefit-title { font-size:17px; font-weight:600; color:var(--forest); margin-bottom:10px; }
-  .benefit-body { font-size:13.5px; color:var(--slate); line-height:1.7; }
+/* ANIMATIONS */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.fade { opacity: 0; animation: fadeUp .7s forwards; }
+.d1{animation-delay:.1s} .d2{animation-delay:.22s} .d3{animation-delay:.36s} .d4{animation-delay:.5s} .d5{animation-delay:.64s}
 
-  /* LOGISTICS */
-  .logistics { background:var(--charcoal); }
-  .logistics .section-title { color:var(--white); }
-  .logistics .section-sub { color:#8AADA3; }
-  .logistics .section-label { color:var(--gold); }
-  .log-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
-  .log-item { background:rgba(255,255,255,.05); border:1px solid rgba(61,190,140,.2); border-radius:10px; padding:24px 22px; }
-  .log-icon { font-size:24px; margin-bottom:12px; }
-  .log-title { font-size:13px; font-weight:700; color:var(--mint); letter-spacing:.05em; text-transform:uppercase; margin-bottom:6px; }
-  .log-body { font-size:13px; color:#8AADA3; line-height:1.6; }
-
-  /* CTA */
-  .cta-banner { background:var(--forest); padding:100px 48px; text-align:center; position:relative; overflow:hidden; }
-  .cta-banner::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(61,190,140,.15) 0%,transparent 70%); }
-  .cta-banner .inner { position:relative; z-index:1; }
-  .cta-banner h2 { font-family:'Playfair Display',serif; font-size:clamp(34px,5vw,60px); color:var(--white); margin-bottom:18px; }
-  .cta-banner p { font-size:17px; color:var(--light-mint); margin-bottom:44px; font-weight:300; }
-  .cta-contacts { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-bottom:44px; }
-  .contact-chip { background:rgba(255,255,255,.07); border:1px solid rgba(61,190,140,.3); border-radius:8px; padding:16px 24px; text-align:left; min-width:220px; }
-  .contact-chip .chip-label { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--mint); margin-bottom:4px; }
-  .contact-chip .chip-val { font-size:14px; color:var(--white); font-weight:500; }
-
-  footer { background:var(--charcoal); padding:28px 48px; text-align:center; font-size:12px; color:var(--slate); border-top:1px solid rgba(255,255,255,.06); }
-
-  @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
-  .fade-up{opacity:0;animation:fadeUp .7s forwards;} .delay-1{animation-delay:.1s;} .delay-2{animation-delay:.22s;} .delay-3{animation-delay:.36s;} .delay-4{animation-delay:.5s;}
-
-  @media(max-width:768px){
-    nav{padding:14px 20px;} .nav-links{display:none;}
-    section{padding:64px 20px;} .hero-inner{padding:100px 20px 60px;}
-    .hero-stat{flex:0 0 50%;margin-right:0;padding:12px 0;border-right:none;border-bottom:1px solid rgba(255,255,255,.08);}
-    .cta-banner{padding:64px 20px;}
-  }
+@media(max-width:900px){
+  nav { padding: 16px 20px; }
+  .nav-links { display: none; }
+  section { padding: 64px 20px; }
+  .hero { padding: 110px 20px 64px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .who-grid, .founder-grid, .contact-grid, .ventures-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-stats-grid { grid-template-columns: 1fr 1fr; }
+}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <div class="nav-logo">Emerald <span>Horizon</span></div>
+  <a href="/" class="nav-logo">
+    <img src="/logo.png" alt="Emerald Horizon" onerror="this.style.display='none'" />
+    <div class="nav-logo-text">Emerald <span>Horizon</span></div>
+  </a>
   <div class="nav-links">
-    <a href="#schedule">Schedule</a>
-    <a href="#curriculum">Curriculum</a>
-    <a href="#benefits">Benefits</a>
+    <a href="#ventures">Ventures</a>
+    <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </div>
   <a href="#contact" class="nav-cta">Partner With Us →</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="gold-bar"></div>
-  <div class="hero-orb orb1"></div>
-  <div class="hero-orb orb2"></div>
+  <div class="hero-bg"></div>
+  <div class="gold-line"></div>
   <div class="hero-inner">
-    <div class="badge fade-up">🌏 Exclusively for Language Centers & Bilingual Schools</div>
-    <h1 class="fade-up delay-1"><em>AI, Vlogging</em><br>&amp; STEM<br>Study Tour</h1>
-    <p class="hero-sub fade-up delay-2">A premium all-inclusive 7-day international program hosted at Wichai Wittaya School, Chiang Mai. Designed as a turnkey group product for Hanoi's leading education centers.</p>
-
-    <div class="flight-strip fade-up delay-2">
-      <div class="fs-title">✈ Thai AirAsia FD871 · Hanoi (HAN) → Chiang Mai (CNX)</div>
-      <div class="fs-details">Departs 15:20 &nbsp;·&nbsp; Arrives 17:00 &nbsp;·&nbsp; 1h 40m direct &nbsp;·&nbsp; Dates scheduled by demand</div>
-      <div class="day-pills">
-        <span class="dp-label">Operates:</span>
-        <span class="day-pill on">Sun</span>
-        <span class="day-pill off">Mon</span>
-        <span class="day-pill on">Tue</span>
-        <span class="day-pill off">Wed</span>
-        <span class="day-pill on">Thu</span>
-        <span class="day-pill on">Fri</span>
-        <span class="day-pill on">Sat</span>
+    <div>
+      <div class="hk-badge fade d1">🇭🇰 Hong Kong Registered · Operating Across Asia</div>
+      <h1 class="fade d2">Emerald<br><em>Horizon</em><br>Ventures</h1>
+      <p class="hero-tagline fade d3"><em>Empowering Schools. Inspiring Students.</em></p>
+      <p class="hero-tagline fade d3" style="font-style:normal;">A Hong Kong-based education group building programs, pathways, and platforms that open doors for students and schools across Asia.</p>
+      <div class="hero-ctas fade d4">
+        <a href="#ventures" class="btn-gold">Explore Our Ventures →</a>
+        <a href="#contact" class="btn-outline">Partner With Us</a>
       </div>
     </div>
-
-    <div class="hero-ctas fade-up delay-3">
-      <a href="#contact" class="btn-primary">Request Partnership Deck →</a>
-      <a href="#schedule" class="btn-secondary">View Schedule ↓</a>
-    </div>
-    <div class="hero-stats fade-up delay-4">
-      <div class="hero-stat"><div class="num">7</div><div class="lbl">Days Fully Managed</div></div>
-      <div class="hero-stat"><div class="num">3</div><div class="lbl">AI & STEM Skill Tracks</div></div>
-      <div class="hero-stat"><div class="num">1 Free</div><div class="lbl">Chaperone / 15 Students</div></div>
-      <div class="hero-stat"><div class="num">5×</div><div class="lbl">Flights Per Week</div></div>
+    <div class="hero-stats-grid fade d5">
+      <div class="stat-card accent">
+        <div class="snum">4</div>
+        <div class="slbl">Ventures</div>
+      </div>
+      <div class="stat-card">
+        <div class="snum">3</div>
+        <div class="slbl">Countries</div>
+      </div>
+      <div class="stat-card">
+        <div class="snum">B2B</div>
+        <div class="slbl">Focus</div>
+      </div>
+      <div class="stat-card accent">
+        <div class="snum">HK</div>
+        <div class="slbl">Registered</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="why" id="why">
+<!-- WHO WE ARE -->
+<section class="who" id="about">
   <div class="inner">
-    <p class="section-label">Why Emerald Horizon</p>
-    <h2 class="section-title">Elevate Your Program<br>Offering Instantly</h2>
-    <p class="section-sub">We handle everything on the ground. You book the group — your students come home with real skills, a certificate, and memories that last.</p>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">🤖</div>
-        <div class="why-title">Real AI Curriculum</div>
-        <p class="why-body">Students pitch AI start-ups, produce travel vlogs, and build Arduino prototypes — skills with real-world value and impressive portfolio outputs.</p>
+    <div class="who-grid">
+      <div class="who-text">
+        <p class="section-eyebrow">Who We Are</p>
+        <h2 class="section-title">An Education Group Built for the Asian Century</h2>
+        <p>Emerald Horizon Ventures is a <strong>Hong Kong-registered education company</strong> operating across Southeast and East Asia. We build B2B programs and platforms that help schools deliver better outcomes — and students access better opportunities.</p>
+        <p>Our work spans international study tours, student competitions, school recruitment, and education consulting — united by a single belief: <strong>great education changes lives.</strong></p>
+        <p>We work exclusively <strong>business-to-business</strong>, partnering with language centers, bilingual schools, and international institutions as our distribution and delivery partners.</p>
       </div>
-      <div class="why-card">
-        <div class="why-icon">🌏</div>
-        <div class="why-title">Cultural Immersion</div>
-        <p class="why-body">Elephant Sanctuary, Night Bazaar, Orphanage Masterclass, and International Buddy activities with local Thai students at Wichai Wittaya School.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🎓</div>
-        <div class="why-title">Official Graduation</div>
-        <p class="why-body">Every student earns a certified certificate from an internationally-partnered school — a credential that stands out on student CVs.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">✅</div>
-        <div class="why-title">Fully Managed & Halal</div>
-        <p class="why-body">All meals, transport, accommodation, and curriculum handled end-to-end. Fully Halal-certified catering throughout the entire program.</p>
+      <div class="who-pillars">
+        <div class="pillar">
+          <div class="pillar-icon">🌏</div>
+          <div>
+            <div class="pillar-title">Asia-First Strategy</div>
+            <div class="pillar-body">Built around direct-flight corridors and regional school holiday calendars. Vietnam, China, Myanmar, and Thailand are our core operating markets.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🤝</div>
+          <div>
+            <div class="pillar-title">Pure B2B Model</div>
+            <div class="pillar-body">We sell turnkey programs to schools and centers — not direct to parents. Our partners earn margin; we handle operations.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🎓</div>
+          <div>
+            <div class="pillar-title">Outcomes-Driven</div>
+            <div class="pillar-body">Every program produces a tangible credential — a certificate, a competition result, a school placement — not just an experience.</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="schedule" id="schedule">
+<!-- VENTURES -->
+<section class="ventures" id="ventures">
   <div class="inner">
-    <p class="section-label">Program Timeline</p>
-    <h2 class="section-title" style="color:var(--white)">7-Day Schedule</h2>
-    <p class="section-sub" style="color:var(--light-mint)">A structured, mentor-led itinerary balancing STEM learning, English practice, cultural exploration, and evening social activities.</p>
-    <div class="days-scroll">
-      <div class="day-card"><div class="day-num">Day 1</div><div class="day-title">Arrival</div><ul class="day-bullets"><li>Flight arrival at CNX</li><li>Welcome dinner</li><li>Hotel check-in</li></ul></div>
-      <div class="day-card"><div class="day-num">Day 2</div><div class="day-title">AI Pitch</div><ul class="day-bullets"><li>English & AI pitch lessons</li><li>Elephant Sanctuary trip</li><li>Night Bazaar walk</li></ul></div>
-      <div class="day-card"><div class="day-num">Day 3</div><div class="day-title">Vlogging</div><ul class="day-bullets"><li>AI Vlogging lessons</li><li>International Buddy session</li><li>Orphanage Masterclass</li></ul></div>
-      <div class="day-card"><div class="day-num">Day 4</div><div class="day-title">Vlogging+</div><ul class="day-bullets"><li>AI Vlogging continuation</li><li>Afternoon Study Trip</li><li>Evening with Mentors</li></ul></div>
-      <div class="day-card"><div class="day-num">Day 5</div><div class="day-title">Arduino</div><ul class="day-bullets"><li>English & Arduino lessons</li><li>Afternoon Study Trip</li><li>Evening with Mentors</li></ul></div>
-      <div class="day-card"><div class="day-num">Day 6</div><div class="day-title">Arduino+</div><ul class="day-bullets"><li>Arduino final prototype</li><li>Afternoon Study Trip</li><li>Evening with Mentors</li></ul></div>
-      <div class="day-card"><div class="day-num">Day 7</div><div class="day-title">Graduation</div><ul class="day-bullets"><li>Graduation Ceremony</li><li>Certificate Award</li><li>Airport Send-off</li></ul></div>
-    </div>
-  </div>
-</section>
+    <p class="section-eyebrow">Our Portfolio</p>
+    <h2 class="section-title">Four Ventures. One Mission.</h2>
+    <p class="section-sub">Each venture operates independently with its own brand, market, and product — unified by our commitment to B2B education excellence.</p>
+    <div class="ventures-grid">
 
-<section class="curriculum" id="curriculum">
-  <div class="inner">
-    <p class="section-label">3 Skill Tracks</p>
-    <h2 class="section-title">What Students Learn</h2>
-    <p class="section-sub">Three high-demand skill tracks taught entirely in English by certified educators, producing real portfolio-worthy outputs by graduation day.</p>
-    <div class="tracks">
-      <div class="track-card">
-        <div class="track-header"><div class="track-emoji">🚀</div><div class="track-name">AI Start-Up Pitch</div><span class="track-tag">Entrepreneurship</span></div>
-        <div class="track-body"><ul><li>Identify a real-world problem worth solving</li><li>Design an AI-powered business solution</li><li>Build and design a compelling pitch deck</li><li>Public speaking &amp; investor Q&amp;A practice</li></ul></div>
+      <!-- VENTURE 1: Study Tour -->
+      <a href="/tour" class="venture-card">
+        <div class="v-tag live"><span class="v-dot"></span> Live</div>
+        <div class="v-icon">✈️</div>
+        <div class="v-name">AI & STEM Study Tour</div>
+        <div class="v-desc">A 7-day all-inclusive AI, Vlogging & Arduino program hosted at Wichai Wittaya School in Chiang Mai, Thailand. Sold as a turnkey group package to language centers and bilingual schools in Hanoi.</div>
+        <div class="v-link">View Program →</div>
+        <div class="v-meta">
+          <span class="v-meta-item">Chiang Mai, Thailand</span>
+          <span class="v-meta-item">Hanoi Market</span>
+          <span class="v-meta-item">7 Days / 6 Nights</span>
+        </div>
+      </a>
+
+      <!-- VENTURE 2: Competition -->
+      <a href="https://aispc2026.org" target="_blank" class="venture-card gold">
+        <div class="v-tag live"><span class="v-dot"></span> Live</div>
+        <div class="v-icon">🔬</div>
+        <div class="v-name">A-ISPC 2026</div>
+        <div class="v-desc">The International AI-Assisted Science Project Competition. Open to secondary school students worldwide. Online preliminary round, with finals hosted in Kuala Lumpur in June 2026.</div>
+        <div class="v-link gold">Visit aispc2026.org →</div>
+        <div class="v-meta">
+          <span class="v-meta-item">Kuala Lumpur Finals</span>
+          <span class="v-meta-item">Grades 7–13</span>
+          <span class="v-meta-item">$80 USD / team</span>
+        </div>
+      </a>
+
+      <!-- VENTURE 3: Recruitment -->
+      <div class="venture-card coming">
+        <div class="v-tag coming-soon"><span class="v-dot"></span> Coming Soon</div>
+        <div class="v-icon">🏫</div>
+        <div class="v-name">International School Recruitment</div>
+        <div class="v-desc">K–12 student recruitment and pathway consulting from Myanmar and China to international schools in Bangkok and Chiang Mai. Connecting families to the right school fit.</div>
+        <div class="v-meta">
+          <span class="v-meta-item">Myanmar · China</span>
+          <span class="v-meta-item">Bangkok · Chiang Mai</span>
+          <span class="v-meta-item">K–12</span>
+        </div>
       </div>
-      <div class="track-card">
-        <div class="track-header gold"><div class="track-emoji">🎬</div><div class="track-name">AI Vlogging</div><span class="track-tag gold">Content Creation</span></div>
-        <div class="track-body"><ul><li>Scriptwriting &amp; storyboarding for travel vlogs</li><li>Smartphone cinematography techniques</li><li>AI-assisted video editing tools</li><li>Publish a finished Chiang Mai vlog episode</li></ul></div>
+
+      <!-- VENTURE 4: Publishing -->
+      <div class="venture-card coming">
+        <div class="v-tag coming-soon"><span class="v-dot"></span> Coming Soon</div>
+        <div class="v-icon">📚</div>
+        <div class="v-name">Education Publishing</div>
+        <div class="v-desc">A publishing venture focused on curriculum materials, teacher resources, and student-facing content for international and bilingual schools across Asia. Details coming soon.</div>
+        <div class="v-meta">
+          <span class="v-meta-item">Pan-Asia</span>
+          <span class="v-meta-item">Curriculum Focus</span>
+          <span class="v-meta-item">B2B</span>
+        </div>
       </div>
-      <div class="track-card">
-        <div class="track-header teal"><div class="track-emoji">🔌</div><div class="track-name">Arduino STEM</div><span class="track-tag blue">Engineering</span></div>
-        <div class="track-body"><ul><li>Hardware basics, sensors &amp; circuits</li><li>Block-based and text-based coding</li><li>Build a fully working physical prototype</li><li>Demo Day presentation to peers</li></ul></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder">
+  <div class="inner">
+    <div class="founder-grid">
+      <div class="founder-img-placeholder">👤</div>
+      <div>
+        <p class="section-eyebrow">The Founder</p>
+        <h2 class="section-title">Nurbakyt Boltayev</h2>
+        <p class="founder-bio"><strong>International Education Consultant · Cambridge & CIS Specialist · Author</strong></p>
+        <p class="founder-bio">Nurbakyt is the founder of Emerald Horizon Ventures and a school transformation specialist with deep experience across Southeast and Central Asia. He works with schools on curriculum, accreditation, and international program development.</p>
+        <p class="founder-bio">With Emerald Horizon, he is building an education group that operates at the intersection of technology, international mobility, and school excellence — exclusively through B2B partnerships.</p>
+        <div class="founder-links">
+          <a href="https://nurbakyt.com" target="_blank" class="founder-link">nurbakyt.com →</a>
+          <a href="#contact" class="founder-link">Get in Touch →</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="benefits" id="benefits">
+<!-- CONTACT -->
+<section class="contact" id="contact">
   <div class="inner">
-    <p class="section-label">Partner Benefits</p>
-    <h2 class="section-title">What Your School Gets</h2>
-    <p class="section-sub">Become a premium international program provider without the overhead. Everything is managed end-to-end by Emerald Horizon.</p>
-    <div class="benefits-grid">
-      <div class="benefit-card"><div class="benefit-num">01 —</div><div class="benefit-title">Turnkey Operations</div><div class="benefit-body">We manage 100% of ground logistics — accommodation, all meals, transport, curriculum delivery, and venue coordination. Zero administrative burden for your team.</div></div>
-      <div class="benefit-card"><div class="benefit-num">02 —</div><div class="benefit-title">Free Chaperone Travel</div><div class="benefit-body">One teacher or staff member travels free on-the-ground for every 15-student cohort booked — a powerful staff retention and team reward tool.</div></div>
-      <div class="benefit-card"><div class="benefit-num">03 —</div><div class="benefit-title">Co-Branded Credentials</div><div class="benefit-body">Co-branded certificates, promotional materials, and professional event photography to elevate your center's international program reputation.</div></div>
-      <div class="benefit-card"><div class="benefit-num">04 —</div><div class="benefit-title">Flexible Scheduling</div><div class="benefit-body">Programs align with Vietnamese school holidays. The direct FD871 flight operates 5 days/week — dates scheduled around your demand.</div></div>
-      <div class="benefit-card"><div class="benefit-num">05 —</div><div class="benefit-title">Full Halal Compliance</div><div class="benefit-body">All meals throughout the program are fully Halal-certified, ensuring complete comfort and confidence for Muslim students and their families.</div></div>
-      <div class="benefit-card"><div class="benefit-num">06 —</div><div class="benefit-title">Safety &amp; Support</div><div class="benefit-body">Emergency contingency fund, 24/7 on-ground support team, and comprehensive group travel insurance coordination — all included.</div></div>
+    <div class="contact-grid">
+      <div class="contact-text">
+        <p class="section-eyebrow">Get In Touch</p>
+        <h2 class="section-title">Partner With Emerald Horizon</h2>
+        <p>We work with language centers, bilingual schools, and international institutions as B2B partners. If you're interested in bringing any of our programs to your student community, we'd love to hear from you.</p>
+        <p>We respond within <strong>24 hours</strong> on business days.</p>
+        <div style="margin-top:32px;">
+          <a href="mailto:emeraldhv@nurbakyt.com" class="btn-gold">Send Us an Email →</a>
+        </div>
+      </div>
+      <div class="contact-chips">
+        <div class="chip">
+          <div class="chip-label">Email</div>
+          <div class="chip-val">emeraldhv@nurbakyt.com</div>
+        </div>
+        <div class="chip">
+          <div class="chip-label">WhatsApp / Zalo</div>
+          <div class="chip-val">+66 61 075 8421</div>
+        </div>
+        <div class="chip">
+          <div class="chip-label">Registered</div>
+          <div class="chip-val">Hong Kong SAR</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="logistics">
-  <div class="inner">
-    <p class="section-label">Ground Logistics</p>
-    <h2 class="section-title" style="color:var(--white)">Everything Handled</h2>
-    <p class="section-sub">From airport pickup to graduation send-off. Every aspect of the on-ground experience is managed by Emerald Horizon.</p>
-    <div class="log-grid">
-      <div class="log-item"><div class="log-icon">✈️</div><div class="log-title">Direct Flight</div><div class="log-body">Thai AirAsia FD871 · HAN→CNX · Departs 15:20, Arrives 17:00 · Operates Sun, Tue, Thu, Fri, Sat</div></div>
-      <div class="log-item"><div class="log-icon">🏨</div><div class="log-title">Accommodation</div><div class="log-body">3–4 star hotel for 6 nights. Twin, triple &amp; single room configurations. All included.</div></div>
-      <div class="log-item"><div class="log-icon">🚌</div><div class="log-title">Transport</div><div class="log-body">Private 20-seater chartered bus for the full 6-day ground program, including airport pickup and drop-off.</div></div>
-      <div class="log-item"><div class="log-icon">🍽️</div><div class="log-title">Halal Meals</div><div class="log-body">3 Halal-certified meals per day plus drinking water for all participants throughout the 6 days.</div></div>
-      <div class="log-item"><div class="log-icon">🏫</div><div class="log-title">Host Venue</div><div class="log-body">Wichai Wittaya School, Chiang Mai — classrooms, equipment, Thai student buddies, and certified mentors.</div></div>
-      <div class="log-item"><div class="log-icon">🎓</div><div class="log-title">Graduation</div><div class="log-body">Day 7 official ceremony with co-branded certificates, professional photography, and a warm community send-off.</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-banner" id="contact">
-  <div class="inner">
-    <p class="section-label" style="color:var(--gold);text-align:center">Get In Touch</p>
-    <h2>Ready to Book Your First Cohort?</h2>
-    <p>We'll send you the full partnership deck and program guide within 24 hours.</p>
-    <div class="cta-contacts">
-      <div class="contact-chip"><div class="chip-label">Email</div><div class="chip-val">emeraldhv@nurbakyt.com</div></div>
-      <div class="contact-chip"><div class="chip-label">WhatsApp / Zalo</div><div class="chip-val">+66 61 075 8421</div></div>
-      <div class="contact-chip"><div class="chip-label">Flight Route</div><div class="chip-val">HAN → CNX · Thai AirAsia FD871 · 5×/week</div></div>
-    </div>
-    <a href="mailto:emeraldhv@nurbakyt.com" class="btn-primary" style="font-size:16px;padding:18px 40px;">Email Us Now →</a>
-  </div>
-</section>
-
+<!-- FOOTER -->
 <footer>
-  © 2025 Emerald Horizon Ventures (Hong Kong) &nbsp;·&nbsp; Host Venue: Wichai Wittaya School, Chiang Mai, Thailand &nbsp;·&nbsp; B2B Inquiries Only
+  <div class="footer-logo">Emerald <span>Horizon</span> Ventures</div>
+  <div class="footer-links">
+    <a href="/tour">Study Tour</a>
+    <a href="https://aispc2026.org" target="_blank">A-ISPC 2026</a>
+    <a href="https://nurbakyt.com" target="_blank">Consulting</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 Emerald Horizon Ventures (Hong Kong) · Empowering Schools. Inspiring Students.</div>
 </footer>
 
 </body>
