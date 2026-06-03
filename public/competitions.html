@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EHV Competition Portal — Register</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1A2340;
+    --emerald: #1A3C34;
+    --emerald-mid: #0D7A5F;
+    --emerald-light: #3DBE8C;
+    --coral: #E8533D;
+    --gold: #C8A84B;
+    --gold-light: #F4D98A;
+    --cream: #F8F9FC;
+    --ink: #1C1C2A;
+    --ink-mid: #4A4A5A;
+    --ink-light: #8A8A9A;
+    --border: #E2E4EE;
+    --white: #ffffff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--ink); }
+
+  /* HEADER */
+  .header { background:var(--navy); padding:32px 40px; }
+  .header-inner { max-width:960px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+  .logo-area { display:flex; flex-direction:column; gap:2px; }
+  .logo-name { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:#fff; }
+  .logo-sub { font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.4); }
+  .early-bird-pill { background:rgba(200,168,75,0.15); border:1px solid rgba(200,168,75,0.35); border-radius:20px; padding:8px 16px; font-size:12px; color:var(--gold-light); font-weight:500; }
+  .early-bird-pill span { font-weight:300; opacity:0.7; }
+
+  /* HERO */
+  .hero { background:var(--navy); padding:0 40px 48px; border-bottom:1px solid rgba(255,255,255,0.06); }
+  .hero-inner { max-width:960px; margin:0 auto; }
+  .hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,4vw,46px); font-weight:500; color:#fff; line-height:1.15; margin-bottom:10px; }
+  .hero h1 em { color:var(--gold); font-style:italic; }
+  .hero p { font-size:14px; color:rgba(255,255,255,0.5); font-weight:300; max-width:500px; }
+
+  /* MAIN */
+  .main { max-width:960px; margin:0 auto; padding:48px 40px; display:grid; grid-template-columns:1fr 360px; gap:32px; align-items:start; }
+
+  /* COMPETITIONS */
+  .competitions { display:flex; flex-direction:column; gap:16px; }
+  .comp-section-title { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--ink); margin-bottom:4px; }
+  .comp-section-sub { font-size:13px; color:var(--ink-mid); margin-bottom:16px; }
+
+  .comp-card { background:var(--white); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+  .comp-card-header { padding:20px 24px 16px; display:flex; align-items:flex-start; justify-content:space-between; gap:12px; cursor:pointer; user-select:none; }
+  .comp-card-header:hover { background:#fafafa; }
+  .comp-accent { width:3px; border-radius:2px; flex-shrink:0; margin-top:3px; }
+  .comp-header-left { display:flex; gap:12px; align-items:flex-start; flex:1; }
+  .comp-info { flex:1; }
+  .comp-tag { font-size:10px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:4px; }
+  .comp-name { font-size:16px; font-weight:500; color:var(--ink); margin-bottom:2px; }
+  .comp-meta { font-size:12px; color:var(--ink-light); }
+  .comp-toggle { font-size:18px; color:var(--ink-light); transition:transform 0.2s; }
+  .comp-toggle.open { transform:rotate(45deg); }
+
+  .comp-body { padding:0 24px 20px; border-top:1px solid var(--border); display:none; }
+  .comp-body.open { display:block; }
+
+  /* TRACKS */
+  .tracks { display:flex; flex-direction:column; gap:12px; margin-top:16px; }
+  .track-row { background:var(--cream); border:1px solid var(--border); border-radius:10px; padding:16px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .track-info { flex:1; min-width:180px; }
+  .track-label { font-size:10px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:2px; }
+  .track-name { font-size:14px; font-weight:500; color:var(--ink); }
+  .track-grades { font-size:12px; color:var(--ink-light); }
+  .track-price { text-align:right; flex-shrink:0; }
+  .price-now { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--ink); line-height:1; }
+  .price-was { font-size:11px; color:var(--ink-light); text-decoration:line-through; }
+  .price-unit { font-size:11px; color:var(--ink-light); }
+  .qty-control { display:flex; align-items:center; gap:8px; flex-shrink:0; }
+  .qty-btn { width:30px; height:30px; border-radius:6px; border:1px solid var(--border); background:var(--white); font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; color:var(--ink); font-weight:500; }
+  .qty-btn:hover { background:var(--cream); border-color:#ccc; }
+  .qty-num { font-size:15px; font-weight:500; width:24px; text-align:center; }
+
+  /* PORTFOLIO */
+  .portfolio-row { background:#fffdf4; border:1px solid rgba(200,168,75,0.3); border-radius:10px; padding:16px; margin-top:12px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .portfolio-badge { display:inline-block; background:rgba(200,168,75,0.15); color:#8a6a10; border-radius:20px; padding:3px 10px; font-size:10px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:4px; }
+  .portfolio-name { font-size:14px; font-weight:500; color:var(--ink); }
+  .portfolio-sub { font-size:12px; color:var(--ink-light); }
+
+  /* SUMMARY SIDEBAR */
+  .sidebar { position:sticky; top:24px; }
+  .summary-card { background:var(--white); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+  .summary-header { background:var(--navy); padding:20px 24px; }
+  .summary-title { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; color:#fff; margin-bottom:2px; }
+  .summary-sub { font-size:12px; color:rgba(255,255,255,0.45); }
+
+  .school-form { padding:20px 24px; border-bottom:1px solid var(--border); }
+  .form-title { font-size:12px; font-weight:500; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-light); margin-bottom:12px; }
+  .form-group { margin-bottom:10px; }
+  .form-group label { display:block; font-size:12px; color:var(--ink-mid); margin-bottom:4px; font-weight:500; }
+  .form-group input, .form-group select {
+    width:100%; padding:8px 12px; border:1px solid var(--border); border-radius:6px;
+    font-family:'DM Sans',sans-serif; font-size:13px; color:var(--ink);
+    background:var(--cream); outline:none;
+  }
+  .form-group input:focus, .form-group select:focus { border-color:var(--emerald-mid); background:#fff; }
+
+  .order-summary { padding:16px 24px; border-bottom:1px solid var(--border); min-height:80px; }
+  .order-empty { font-size:13px; color:var(--ink-light); text-align:center; padding:16px 0; }
+  .order-item { display:flex; justify-content:space-between; align-items:flex-start; gap:8px; font-size:13px; color:var(--ink); padding:6px 0; border-bottom:1px solid #f0f0f0; }
+  .order-item:last-child { border-bottom:none; }
+  .order-item-name { color:var(--ink-mid); flex:1; }
+  .order-item-price { font-weight:500; flex-shrink:0; }
+  .order-total { display:flex; justify-content:space-between; padding:16px 24px; border-bottom:1px solid var(--border); }
+  .order-total-label { font-size:14px; font-weight:500; color:var(--ink); }
+  .order-total-price { font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:600; color:var(--navy); }
+
+  .checkout-area { padding:16px 24px 20px; }
+  .btn-checkout {
+    width:100%; padding:14px; background:var(--emerald-mid); color:#fff;
+    border:none; border-radius:8px; font-family:'DM Sans',sans-serif;
+    font-size:15px; font-weight:500; cursor:pointer; transition:background 0.2s;
+  }
+  .btn-checkout:hover { background:var(--emerald); }
+  .btn-checkout:disabled { background:#ccc; cursor:not-allowed; }
+  .checkout-note { font-size:11px; color:var(--ink-light); text-align:center; margin-top:8px; line-height:1.5; }
+
+  .error-msg { background:#fff3f3; border:1px solid #ffc5c5; border-radius:6px; padding:10px 14px; font-size:13px; color:#c0392b; margin-bottom:12px; display:none; }
+
+  @media(max-width:720px) {
+    .main { grid-template-columns:1fr; padding:24px 20px; }
+    .header { padding:24px 20px; }
+    .hero { padding:0 20px 36px; }
+    .sidebar { position:static; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="logo-area">
+      <div class="logo-name">EHV Competition Portal</div>
+      <div class="logo-sub">Emerald Horizon Ventures · Hong Kong</div>
+    </div>
+    <div class="early-bird-pill" id="ebPill">⚡ Early bird pricing active <span>— ends 30 Sept 2026</span></div>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <h1>Register for<br><em>Hong Kong Finals Week</em></h1>
+    <p>Cyberport, Hong Kong · December 4–6, 2026 · Three competitions, one portal.</p>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- LEFT: COMPETITIONS -->
+  <div class="competitions">
+
+    <!-- A-IBFC -->
+    <div>
+      <div class="comp-section-title">A-IBFC 2026</div>
+      <div class="comp-section-sub">Asia International Business &amp; Finance Challenge · aibfc.org</div>
+      <div class="comp-card">
+        <div class="comp-card-header" onclick="toggleCard('aibfc')">
+          <div class="comp-header-left">
+            <div class="comp-accent" style="background:#3D6BE8;height:40px;"></div>
+            <div class="comp-info">
+              <div class="comp-tag" style="color:#3D6BE8;">Team of 3 · Grades 7–12</div>
+              <div class="comp-name">Financial Literacy + Entrepreneurship</div>
+              <div class="comp-meta">Online qualifying Nov 2026 → HK Finals Dec 4–6</div>
+            </div>
+          </div>
+          <div class="comp-toggle" id="aibfc-toggle">+</div>
+        </div>
+        <div class="comp-body" id="aibfc-body">
+          <div class="tracks">
+
+            <div class="track-row">
+              <div class="track-info">
+                <div class="track-label" style="color:#0D7A5F;">Track 1</div>
+                <div class="track-name">Financial Literacy</div>
+                <div class="track-grades">Grades 7–9 · Team of 3</div>
+              </div>
+              <div class="track-price">
+                <div class="price-was" id="t1-was">$75</div>
+                <div class="price-now" id="t1-now">$65</div>
+                <div class="price-unit">per team</div>
+              </div>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('aibfc_track1',-1)">−</button>
+                <div class="qty-num" id="qty-aibfc_track1">0</div>
+                <button class="qty-btn" onclick="changeQty('aibfc_track1',1)">+</button>
+              </div>
+            </div>
+
+            <div class="track-row">
+              <div class="track-info">
+                <div class="track-label" style="color:#3D6BE8;">Track 2</div>
+                <div class="track-name">Entrepreneurship</div>
+                <div class="track-grades">Grades 10–12 · Team of 3</div>
+              </div>
+              <div class="track-price">
+                <div class="price-was" id="t2-was">$75</div>
+                <div class="price-now" id="t2-now">$65</div>
+                <div class="price-unit">per team</div>
+              </div>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('aibfc_track2',-1)">−</button>
+                <div class="qty-num" id="qty-aibfc_track2">0</div>
+                <button class="qty-btn" onclick="changeQty('aibfc_track2',1)">+</button>
+              </div>
+            </div>
+
+            <div class="portfolio-row">
+              <div>
+                <div class="portfolio-badge">Portfolio Pathway</div>
+                <div class="portfolio-name">International Portfolio Certificate</div>
+                <div class="portfolio-sub">Individual · All grades 7–12 · University credential</div>
+              </div>
+              <div class="track-price">
+                <div class="price-was" id="pp-was">$95</div>
+                <div class="price-now" id="pp-now">$85</div>
+                <div class="price-unit">per student</div>
+              </div>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('aibfc_portfolio',-1)">−</button>
+                <div class="qty-num" id="qty-aibfc_portfolio">0</div>
+                <button class="qty-btn" onclick="changeQty('aibfc_portfolio',1)">+</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMERALD PRIZE -->
+    <div>
+      <div class="comp-section-title" style="margin-top:24px;">Emerald Prize 2026</div>
+      <div class="comp-section-sub">International Student Art Competition · emeraldprize.com</div>
+      <div class="comp-card">
+        <div class="comp-card-header" onclick="toggleCard('emerald')">
+          <div class="comp-header-left">
+            <div class="comp-accent" style="background:#C8A84B;height:40px;"></div>
+            <div class="comp-info">
+              <div class="comp-tag" style="color:#C8A84B;">Individual · Grades 1–12</div>
+              <div class="comp-name">Traditional + Digital Art Exhibition</div>
+              <div class="comp-meta">Submission deadline Oct 31 → Exhibition &amp; Awards Dec 4–6</div>
+            </div>
+          </div>
+          <div class="comp-toggle" id="emerald-toggle">+</div>
+        </div>
+        <div class="comp-body" id="emerald-body">
+          <div class="tracks">
+            <div class="track-row">
+              <div class="track-info">
+                <div class="track-label" style="color:#C8A84B;">Individual entry</div>
+                <div class="track-name">Emerald Prize — Per Student</div>
+                <div class="track-grades">Primary (Gr 1–5) · Middle (Gr 6–9) · Senior (Gr 10–12)</div>
+              </div>
+              <div class="track-price">
+                <div class="price-was" id="ep-was">$35</div>
+                <div class="price-now" id="ep-now">$25</div>
+                <div class="price-unit">per student</div>
+              </div>
+              <div class="qty-control">
+                <button class="qty-btn" onclick="changeQty('emerald_prize',-1)">−</button>
+                <div class="qty-num" id="qty-emerald_prize">0</div>
+                <button class="qty-btn" onclick="changeQty('emerald_prize',1)">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT: SIDEBAR -->
+  <div class="sidebar">
+    <div class="summary-card">
+      <div class="summary-header">
+        <div class="summary-title">Your registration</div>
+        <div class="summary-sub">All competitions · HK Finals Dec 4–6</div>
+      </div>
+
+      <div class="school-form">
+        <div class="form-title">School details</div>
+        <div class="form-group">
+          <label>School name *</label>
+          <input type="text" id="school" placeholder="e.g. Hanoi Academy Bilingual School">
+        </div>
+        <div class="form-group">
+          <label>Country *</label>
+          <select id="country">
+            <option value="">Select country...</option>
+            <option>Vietnam</option><option>Cambodia</option><option>Thailand</option>
+            <option>Indonesia</option><option>Malaysia</option><option>Philippines</option>
+            <option>Myanmar</option><option>Kazakhstan</option><option>Uzbekistan</option>
+            <option>Kyrgyzstan</option><option>Turkey</option><option>Hong Kong</option>
+            <option>China</option><option>India</option><option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Coordinator name *</label>
+          <input type="text" id="coordinator" placeholder="Full name">
+        </div>
+        <div class="form-group">
+          <label>Email address *</label>
+          <input type="email" id="email" placeholder="coordinator@school.edu">
+        </div>
+        <div class="form-group">
+          <label>WhatsApp / Phone</label>
+          <input type="text" id="phone" placeholder="+84 ...">
+        </div>
+      </div>
+
+      <div class="order-summary" id="orderSummary">
+        <div class="order-empty" id="orderEmpty">No competitions selected yet.<br>Use + to add teams or students.</div>
+      </div>
+
+      <div class="order-total">
+        <div class="order-total-label">Total</div>
+        <div class="order-total-price" id="orderTotal">$0</div>
+      </div>
+
+      <div class="checkout-area">
+        <div class="error-msg" id="errorMsg"></div>
+        <button class="btn-checkout" id="btnCheckout" onclick="startCheckout()">
+          Pay securely with Stripe →
+        </button>
+        <div class="checkout-note">
+          Secure payment by Stripe · All major cards accepted<br>
+          Schools needing invoice: email register@aibfc.org
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // ── State ─────────────────────────────────────────
+  let earlyBird = true;
+  let quantities = {
+    aibfc_track1: 0,
+    aibfc_track2: 0,
+    aibfc_portfolio: 0,
+    emerald_prize: 0
+  };
+
+  const STANDARD = { aibfc_track1:75, aibfc_track2:75, aibfc_portfolio:95, emerald_prize:35 };
+  const EARLY    = { aibfc_track1:65, aibfc_track2:65, aibfc_portfolio:85, emerald_prize:25 };
+
+  const LABELS = {
+    aibfc_track1:    'A-IBFC Track 1 — Financial Literacy',
+    aibfc_track2:    'A-IBFC Track 2 — Entrepreneurship',
+    aibfc_portfolio: 'A-IBFC Portfolio Pathway',
+    emerald_prize:   'Emerald Prize'
+  };
+
+  const UNITS = {
+    aibfc_track1:'team', aibfc_track2:'team',
+    aibfc_portfolio:'student', emerald_prize:'student'
+  };
+
+  // ── Init ──────────────────────────────────────────
+  async function init() {
+    try {
+      const res = await fetch('/api/pricing');
+      const data = await res.json();
+      earlyBird = data.earlyBird;
+      if (!earlyBird) {
+        document.getElementById('ebPill').style.display = 'none';
+      }
+      updatePriceDisplay();
+    } catch(e) {}
+  }
+
+  function updatePriceDisplay() {
+    const prices = earlyBird ? EARLY : STANDARD;
+    const std = STANDARD;
+    document.getElementById('t1-now').textContent = '$' + prices.aibfc_track1;
+    document.getElementById('t2-now').textContent = '$' + prices.aibfc_track2;
+    document.getElementById('pp-now').textContent = '$' + prices.aibfc_portfolio;
+    document.getElementById('ep-now').textContent = '$' + prices.emerald_prize;
+    if (!earlyBird) {
+      ['t1-was','t2-was','pp-was','ep-was'].forEach(id => {
+        const el = document.getElementById(id);
+        if(el) el.style.display = 'none';
+      });
+    }
+  }
+
+  // ── Card toggle ───────────────────────────────────
+  function toggleCard(id) {
+    const body = document.getElementById(id + '-body');
+    const toggle = document.getElementById(id + '-toggle');
+    const open = body.classList.contains('open');
+    body.classList.toggle('open', !open);
+    toggle.classList.toggle('open', !open);
+    toggle.textContent = open ? '+' : '×';
+  }
+
+  // ── Quantity ──────────────────────────────────────
+  function changeQty(product, delta) {
+    quantities[product] = Math.max(0, quantities[product] + delta);
+    document.getElementById('qty-' + product).textContent = quantities[product];
+    updateSummary();
+  }
+
+  // ── Summary ───────────────────────────────────────
+  function updateSummary() {
+    const prices = earlyBird ? EARLY : STANDARD;
+    let total = 0;
+    let html = '';
+    let hasItems = false;
+
+    for (const [product, qty] of Object.entries(quantities)) {
+      if (qty > 0) {
+        hasItems = true;
+        const lineTotal = qty * prices[product];
+        total += lineTotal;
+        html += '<div class="order-item">'
+          + '<span class="order-item-name">' + LABELS[product] + ' × ' + qty + ' ' + UNITS[product] + (qty>1?'s':'') + '</span>'
+          + '<span class="order-item-price">$' + lineTotal + '</span>'
+          + '</div>';
+      }
+    }
+
+    const summaryEl = document.getElementById('orderSummary');
+    const emptyEl = document.getElementById('orderEmpty');
+
+    if (hasItems) {
+      summaryEl.innerHTML = html;
+    } else {
+      summaryEl.innerHTML = '<div class="order-empty" id="orderEmpty">No competitions selected yet.<br>Use + to add teams or students.</div>';
+    }
+
+    document.getElementById('orderTotal').textContent = '$' + total;
+  }
+
+  // ── Checkout ──────────────────────────────────────
+  async function startCheckout() {
+    const school = document.getElementById('school').value.trim();
+    const country = document.getElementById('country').value;
+    const coordinator = document.getElementById('coordinator').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+
+    const errorEl = document.getElementById('errorMsg');
+    errorEl.style.display = 'none';
+
+    if (!school) return showError('Please enter your school name.');
+    if (!country) return showError('Please select your country.');
+    if (!coordinator) return showError('Please enter the coordinator name.');
+    if (!email || !email.includes('@')) return showError('Please enter a valid email address.');
+
+    const items = Object.entries(quantities)
+      .filter(([,qty]) => qty > 0)
+      .map(([product, quantity]) => ({ product, quantity }));
+
+    if (items.length === 0) return showError('Please select at least one competition.');
+
+    const btn = document.getElementById('btnCheckout');
+    btn.disabled = true;
+    btn.textContent = 'Redirecting to Stripe...';
+
+    try {
+      const res = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ school, country, coordinator, email, phone, items })
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        showError(data.error || 'Something went wrong. Please try again.');
+        btn.disabled = false;
+        btn.textContent = 'Pay securely with Stripe →';
+      }
+    } catch(e) {
+      showError('Connection error. Please try again.');
+      btn.disabled = false;
+      btn.textContent = 'Pay securely with Stripe →';
+    }
+  }
+
+  function showError(msg) {
+    const el = document.getElementById('errorMsg');
+    el.textContent = msg;
+    el.style.display = 'block';
+  }
+
+  init();
+</script>
+</body>
+</html>
