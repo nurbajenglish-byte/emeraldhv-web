@@ -42,7 +42,6 @@
   to = "/aibfc.html"
   status = 200
 
-# emeraldprize.com domain
 [[redirects]]
   from = "https://emeraldprize.com/*"
   to = "/emeraldprize.html"
@@ -55,7 +54,6 @@
   status = 200
   force = true
 
-# aibfc.org domain
 [[redirects]]
   from = "https://aibfc.org/*"
   to = "/aibfc.html"
