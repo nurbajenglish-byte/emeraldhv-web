@@ -33,6 +33,24 @@
   status = 200
 
 [[redirects]]
+  from = "/emeraldprize"
+  to = "/emeraldprize.html"
+  status = 200
+
+# emeraldprize.com domain — serve competition page as homepage
+[[redirects]]
+  from = "https://emeraldprize.com/*"
+  to = "/emeraldprize.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://www.emeraldprize.com/*"
+  to = "/emeraldprize.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
