@@ -37,7 +37,12 @@
   to = "/emeraldprize.html"
   status = 200
 
-# emeraldprize.com domain — serve competition page as homepage
+[[redirects]]
+  from = "/aibfc"
+  to = "/aibfc.html"
+  status = 200
+
+# emeraldprize.com domain
 [[redirects]]
   from = "https://emeraldprize.com/*"
   to = "/emeraldprize.html"
@@ -47,6 +52,19 @@
 [[redirects]]
   from = "https://www.emeraldprize.com/*"
   to = "/emeraldprize.html"
+  status = 200
+  force = true
+
+# aibfc.org domain
+[[redirects]]
+  from = "https://aibfc.org/*"
+  to = "/aibfc.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://www.aibfc.org/*"
+  to = "/aibfc.html"
   status = 200
   force = true
 
