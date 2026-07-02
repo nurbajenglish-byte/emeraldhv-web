@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EHV Study Tours | 7-Day AI & STEM Camps Chiang Mai & Bangkok</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1A3C34;
+            --teal: #0D7A5F;
+            --gold: #C8A84B;
+            --dark-grey: #2C3E50;
+            --light-grey: #F5F7FA;
+            --white: #FFFFFF;
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--dark-grey);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        /* HEADER */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--light-grey);
+            padding: 16px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        nav a {
+            color: var(--dark-grey);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 32px;
+        }
+
+        nav a:hover {
+            color: var(--teal);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 16px 20px;
+            }
+            nav {
+                display: none;
+            }
+        }
+
+        /* HERO - WARM & INVITING */
+        .hero {
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-grey) 100%);
+            padding: 80px 40px;
+            text-align: center;
+            border-bottom: 6px solid var(--teal);
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .hero-subtext {
+            font-size: 16px;
+            color: #888;
+            font-style: italic;
+            max-width: 600px;
+            margin: 24px auto 40px;
+            line-height: 1.8;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--teal);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #0a5a4a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--teal);
+            border: 2px solid var(--teal);
+        }
+
+        .btn-secondary:hover {
+            background: var(--teal);
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+            }
+            .hero h1 {
+                font-size: 40px;
+            }
+            .hero-ctas {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* BENEFITS SECTION */
+        .benefits {
+            padding: 80px 40px;
+            background: var(--white);
+        }
+
+        .benefits h2 {
+            font-family: var(--font-serif);
+            font-size: 44px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: var(--light-grey);
+            padding: 40px;
+            border-radius: 8px;
+            border-left: 5px solid var(--teal);
+        }
+
+        .benefit-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .benefit-card p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .benefit-check {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .benefit-check p {
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .benefit-check p::before {
+            content: "✓ ";
+            color: var(--teal);
+            font-weight: 700;
+        }
+
+        @media (max-width: 1024px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .benefits h2 {
+                font-size: 32px;
+            }
+        }
+
+        /* ITINERARY SECTION */
+        .itinerary {
+            padding: 80px 40px;
+            background: var(--light-grey);
+        }
+
+        .itinerary h2 {
+            font-family: var(--font-serif);
+            font-size: 44px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+
+        .itinerary-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .itinerary-column h3 {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            margin-bottom: 32px;
+            color: var(--primary);
+        }
+
+        .day {
+            background: var(--white);
+            padding: 24px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--teal);
+        }
+
+        .day-title {
+            font-weight: 700;
+            color: var(--teal);
+            margin-bottom: 12px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .day-activities {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .day-activities li {
+            margin-bottom: 8px;
+            list-style: none;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .day-activities li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: var(--teal);
+        }
+
+        .faq-quick {
+            background: var(--white);
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .faq-quick h4 {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .faq-quick p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1024px) {
+            .itinerary-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .itinerary h2 {
+                font-size: 32px;
+            }
+        }
+
+        /* PRICING SECTION */
+        .pricing {
+            padding: 80px 40px;
+            background: var(--white);
+        }
+
+        .pricing h2 {
+            font-family: var(--font-serif);
+            font-size: 44px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .pricing-subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 60px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+        }
+
+        .price-card {
+            background: var(--light-grey);
+            padding: 40px;
+            border-radius: 8px;
+            border-top: 5px solid var(--teal);
+        }
+
+        .price-location {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--teal);
+            margin-bottom: 8px;
+        }
+
+        .price-amount {
+            font-family: var(--font-serif);
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .price-details {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .price-included {
+            font-size: 13px;
+        }
+
+        .price-included p {
+            margin-bottom: 8px;
+        }
+
+        .price-included p::before {
+            content: "✓ ";
+            color: var(--teal);
+            font-weight: 700;
+        }
+
+        .pricing-terms {
+            background: var(--light-grey);
+            padding: 32px;
+            border-radius: 8px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-terms h4 {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .pricing-terms p {
+            font-size: 14px;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            .pricing h2 {
+                font-size: 32px;
+            }
+            .price-amount {
+                font-size: 40px;
+            }
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            padding: 80px 40px;
+            background: var(--light-grey);
+        }
+
+        .testimonials h2 {
+            font-family: var(--font-serif);
+            font-size: 44px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .testimonial-quote {
+            font-size: 15px;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .testimonial-role {
+            font-size: 12px;
+            color: #999;
+        }
+
+        @media (max-width: 1024px) {
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonials h2 {
+                font-size: 32px;
+            }
+        }
+
+        /* FAQ FULL */
+        .faq {
+            padding: 80px 40px;
+            background: var(--white);
+        }
+
+        .faq h2 {
+            font-family: var(--font-serif);
+            font-size: 44px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--light-grey);
+            padding: 24px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-toggle {
+            color: var(--teal);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq h2 {
+                font-size: 32px;
+            }
+        }
+
+        /* PARTNERSHIP CTA */
+        .partnership {
+            background: var(--teal);
+            color: var(--white);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .partnership h2 {
+            font-family: var(--font-serif);
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .partnership p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+        }
+
+        .partnership-benefits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+
+        .partner-benefit {
+            background: rgba(255,255,255,0.1);
+            padding: 24px;
+            border-radius: 8px;
+        }
+
+        .partner-benefit h4 {
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .partner-benefit p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .partnership-benefits {
+                grid-template-columns: 1fr;
+            }
+            .partnership h2 {
+                font-size: 32px;
+            }
+        }
+
+        /* FINAL CTA */
+        .final-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-family: var(--font-serif);
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .btn-white:hover {
+            background: var(--light-grey);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .final-cta {
+                padding: 60px 20px;
+            }
+            .final-cta h2 {
+                font-size: 36px;
+            }
+            .final-cta-buttons {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* FOOTER */
+        footer {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 60px 40px;
+            font-size: 13px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+
+        .footer-col h4 {
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .footer-col p {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .footer-col a {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: #888;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">EHV Study Tours</div>
+        <nav>
+            <a href="#itinerary">Itinerary</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+            <a href="/">Back to EHV</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>They'll Learn More in 7 Days Than a Semester.</h1>
+        <p>All-inclusive immersive STEM programs in Chiang Mai & Bangkok.</p>
+        <div class="hero-subtext">
+            "They came home different. Confident. Excited about STEM. And they'd made friends from 6 countries."
+        </div>
+        <div class="hero-ctas">
+            <a href="#pricing" class="btn btn-primary">Reserve a Spot</a>
+            <a href="#itinerary" class="btn btn-secondary">View Full Itinerary</a>
+        </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="benefits">
+        <h2>Why This Tour?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3>Everything's Handled</h3>
+                <p>Flights from Hanoi included. Hotel booked. Meals prepared (Halal-certified). Local transport sorted. Co-instructors fluent in Vietnamese. Your only job: put them on the plane.</p>
+                <div class="benefit-check">
+                    <p>Flights from Hanoi</p>
+                    <p>All accommodation & meals</p>
+                    <p>Co-instructors speak Vietnamese</p>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <h3>Real Instruction, Not Sightseeing</h3>
+                <p>Curriculum designed by STEM educators. Small group instruction (max 15 students). Arduino robotics + AI startup pitch + vlogging. Taught at Wichai Wittaya (Chiang Mai's top bilingual school).</p>
+                <div class="benefit-check">
+                    <p>Arduino hands-on coding</p>
+                    <p>AI fundamentals + prompt engineering</p>
+                    <p>Co-branded certificate</p>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <h3>Independence & Friendships</h3>
+                <p>Living with peers from Vietnam, Thailand, Malaysia, beyond. Speaking English all day (immersion effect). Managing their own time. Coming home excited about something that matters.</p>
+                <div class="benefit-check">
+                    <p>International peer group</p>
+                    <p>English immersion all week</p>
+                    <p>Lasting friendships</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ITINERARY -->
+    <section class="itinerary" id="itinerary">
+        <h2>What Happens July 5–11?</h2>
+        <div class="itinerary-container">
+            <div class="itinerary-column">
+                <h3>Day-by-Day Schedule</h3>
+                
+                <div class="day">
+                    <div class="day-title">Day 1 — Monday: Arrival</div>
+                    <ul class="day-activities">
+                        <li>Arrive Chiang Mai</li>
+                        <li>Meet instructors & peers</li>
+                        <li>Welcome dinner</li>
+                        <li>Tour campus</li>
+                    </ul>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">Day 2 — Tuesday: STEM Launch</div>
+                    <ul class="day-activities">
+                        <li>Arduino basics (hands-on)</li>
+                        <li>Lunch at school</li>
+                        <li>Free time in Chiang Mai old city</li>
+                        <li>Group dinner</li>
+                    </ul>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">Day 3 — Wednesday: AI & Innovation</div>
+                    <ul class="day-activities">
+                        <li>AI startup pitch workshop</li>
+                        <li>Build & pitch a fake startup</li>
+                        <li>Koktobe + rooftop views</li>
+                        <li>20-min horse experience (included)</li>
+                    </ul>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">Day 4 — Thursday: Vlogging</div>
+                    <ul class="day-activities">
+                        <li>AI vlogging: shoot your own video</li>
+                        <li>Edit using AI tools</li>
+                        <li>Big Almaty Lake visit (scenic)</li>
+                        <li>Group dinner</li>
+                    </ul>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">Day 5 — Friday: Integration</div>
+                    <ul class="day-activities">
+                        <li>Groups synthesize learnings</li>
+                        <li>Presentations to peers</li>
+                        <li>Kazakh group dinner</li>
+                        <li>Certificates awarded</li>
+                    </ul>
+                </div>
+
+                <div class="day">
+                    <div class="day-title">Day 6 — Saturday: Departure</div>
+                    <ul class="day-activities">
+                        <li>Sleep in, optional activities</li>
+                        <li>Final lunch with the group</li>
+                        <li>Depart for Hanoi</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="itinerary-column">
+                <h3>What Parents Need to Know</h3>
+
+                <div class="faq-quick">
+                    <h4>Is it safe?</h4>
+                    <p>Wichai Wittaya is one of Chiang Mai's safest, most established schools. Local guides + co-instructors with first-aid. Daily check-ins via WhatsApp group. 24/7 emergency contact.</p>
+                </div>
+
+                <div class="faq-quick">
+                    <h4>What about meals?</h4>
+                    <p>All meals included in the price. Halal-certified, Thai and international options. Dietary accommodations noted at registration. Students eat together (immersion + safety).</p>
+                </div>
+
+                <div class="faq-quick">
+                    <h4>Flights & transfers?</h4>
+                    <p>Flights from Hanoi included (Thai AirAsia group fares). Airport pickups in Chiang Mai included. Ground transport all week included. You drop them at the airport, we handle the rest.</p>
+                </div>
+
+                <div class="faq-quick">
+                    <h4>Will they actually learn?</h4>
+                    <p>Arduino + Python coding (hands-on). AI fundamentals + prompt engineering. Pitch practice + presentation skills. Video production (real skills, job-ready).</p>
+                </div>
+
+                <div class="faq-quick">
+                    <h4>Can my parent/teacher come?</h4>
+                    <p>Yes. One free chaperone per 3 students. Parents pay $50 for the 3-day finals pass (covers awards + reception). Teachers can attend free.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing" id="pricing">
+        <h2>Pricing</h2>
+        <p class="pricing-subtitle">Everything Included. Nothing Extra.</p>
+        
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div class="price-location">CHIANG MAI</div>
+                <div class="price-amount">$695</div>
+                <div class="price-details">per student, 7 days July 5–11</div>
+                <div class="price-included">
+                    <p>Round-trip flights from Hanoi</p>
+                    <p>5 nights accommodation</p>
+                    <p>All meals (breakfast, lunch, dinner)</p>
+                    <p>Airport transfers + ground transport</p>
+                    <p>STEM instruction & Arduino kits</p>
+                    <p>Co-branded certificate</p>
+                </div>
+            </div>
+
+            <div class="price-card">
+                <div class="price-location">BANGKOK</div>
+                <div class="price-amount">$895</div>
+                <div class="price-details">per student, 7 days custom dates</div>
+                <div class="price-included">
+                    <p>Round-trip flights from Hanoi</p>
+                    <p>5 nights accommodation</p>
+                    <p>All meals (breakfast, lunch, dinner)</p>
+                    <p>Airport transfers + ground transport</p>
+                    <p>STEM instruction & Arduino kits</p>
+                    <p>Co-branded certificate</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-terms">
+            <h4>Payment & Logistics</h4>
+            <p><strong>$200 deposit</strong> due upon registration to reserve your spot</p>
+            <p><strong>Remaining balance</strong> due 6 weeks before departure (can split into 2–3 payments)</p>
+            <p><strong>Refund policy:</strong> 100% refund if cancelled 30 days before departure</p>
+            <p><strong>Group pricing:</strong> 10+ students from same school = $650 Chiang Mai, $850 Bangkok</p>
+            <p>Questions? Email <a href="mailto:tours@emeraldhv.com" style="color: var(--teal);">tours@emeraldhv.com</a> or WhatsApp +66 61 075 8421</p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <h2>What Parents & Students Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <div class="testimonial-quote">
+                    "My son was nervous about leaving Vietnam. Three days in, he was texting home excited about what he'd learned. Came back speaking English more confidently, and he's now thinking about AI as a career. Best investment we made."
+                </div>
+                <div class="testimonial-author">Ms. Hoa (Parent)</div>
+                <div class="testimonial-role">Son attended July 2025 cohort, Hanoi</div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-quote">
+                    "I went alone because my friends didn't want to go. Worst fear: I'd feel left out. Actually, it was one of the best weeks ever. The instruction was real. The friendships are real (we're still in a group chat)."
+                </div>
+                <div class="testimonial-author">Maya, Grade 11</div>
+                <div class="testimonial-role">ILA Vietnam, July 2025 cohort</div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-quote">
+                    "Our center sent 12 students. Every single one came back excited about STEM. Three are now talking about computer science degrees. We're already booking for next year."
+                </div>
+                <div class="testimonial-author">Mr. Tuan (Center Director)</div>
+                <div class="testimonial-role">VUS Vietnam, coordinated group of 12</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    <span>What if my child gets sick during the trip?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Partner clinic 10 min away, 24/7 support from instructors. Travel insurance recommended (covers medical). Daily wellness checks. We've never had a serious incident in 3 years.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    <span>Can parents visit during the week?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Not recommended (disrupts immersion), but possible for 1 afternoon with prior arrangement. Email tours@emeraldhv.com to discuss.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    <span>Can we pay in installments?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes. $200 deposit now, $245 in 4 weeks, $250 in 8 weeks. Email tours@emeraldhv.com.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    <span>Do you offer school discounts?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Absolutely. 10+ students from same school = $650 Chiang Mai, $850 Bangkok. Email for quote.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    <span>Is it appropriate for beginners?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes. Curriculum is designed for ages 14–18 with NO prior experience. We start from zero. Advanced students get tiered instruction.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    <span>What if we need to cancel?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Full refund if cancelled 30 days before departure. 50% refund 14–30 days. No refund within 2 weeks (we've paid deposits).
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERSHIP -->
+    <section class="partnership">
+        <h2>Running a School or Language Center?</h2>
+        <p>Send your students. We handle everything. Group discounts. Co-branded materials. Flexible scheduling. Your center gets repeat revenue. Students get a credential.</p>
+        <div class="partnership-benefits">
+            <div class="partner-benefit">
+                <h4>Group Pricing</h4>
+                <p>10–20 students: $650/student (save $45 per person)</p>
+            </div>
+            <div class="partner-benefit">
+                <h4>Co-Branding</h4>
+                <p>Certificates, photos, announcements with your school logo</p>
+            </div>
+            <div class="partner-benefit">
+                <h4>Dedicated Support</h4>
+                <p>Your own account manager, flexible payment terms</p>
+            </div>
+        </div>
+        <a href="mailto:tours@emeraldhv.com" class="btn btn-white">Schedule a Coordinator Call</a>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <h2>Ready to Book?</h2>
+        <p>Next cohort departs July 5, 2026. Spots limited to 15 students per cohort. $200 deposit reserves your spot.</p>
+        <div class="final-cta-buttons">
+            <a href="mailto:tours@emeraldhv.com" class="btn btn-white">Reserve Your Spot</a>
+            <a href="mailto:tours@emeraldhv.com" class="btn btn-outline">Email Questions</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Program Details</h4>
+                <p>Location: Chiang Mai & Bangkok</p>
+                <p>Dates: July 5–11, 2026</p>
+                <p>Ages: 14–18</p>
+                <p>Group size: 12–15 per cohort</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:tours@emeraldhv.com">tours@emeraldhv.com</a></p>
+                <p>WhatsApp: +66 61 075 8421</p>
+                <p>24-hour response time</p>
+                <p>Bangkok timezone (GMT+7)</p>
+            </div>
+            <div class="footer-col">
+                <h4>Safety & Credentials</h4>
+                <p>Venue: Wichai Wittaya School, Chiang Mai</p>
+                <p>Insurance: Travel insurance recommended</p>
+                <p>Medical: Partner clinic, 24/7 support</p>
+                <p>Company: HK-registered entity</p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <p><a href="#">Terms & Conditions</a></p>
+                <p><a href="#">Cancellation Policy</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="/">Back to EHV</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Emerald Horizon Ventures. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

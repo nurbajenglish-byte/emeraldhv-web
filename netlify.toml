@@ -1,0 +1,38 @@
+[build]
+  publish = "public"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Specific route redirects
+[[redirects]]
+  from = "/aispc"
+  to = "/aispc.html"
+  status = 200
+
+[[redirects]]
+  from = "/aispc/*"
+  to = "/aispc.html"
+  status = 200
+
+[[redirects]]
+  from = "/tour"
+  to = "/tour.html"
+  status = 200
+
+[[redirects]]
+  from = "/tour/*"
+  to = "/tour.html"
+  status = 200
+
+[[redirects]]
+  from = "/competitions"
+  to = "/competitions.html"
+  status = 200
+
+[[redirects]]
+  from = "/competitions/*"
+  to = "/competitions.html"
+  status = 200

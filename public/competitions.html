@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EHV Competitions 2026 | International Student Competitions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1A3C34;
+            --teal: #0D7A5F;
+            --gold: #C8A84B;
+            --dark-grey: #2C3E50;
+            --light-grey: #F5F7FA;
+            --white: #FFFFFF;
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--dark-grey);
+            background: var(--white);
+        }
+
+        /* STICKY BANNER */
+        .urgency {
+            position: sticky;
+            top: 0;
+            background: var(--gold);
+            color: var(--white);
+            padding: 12px 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+            z-index: 1000;
+        }
+
+        /* HEADER */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--light-grey);
+            padding: 16px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        nav a {
+            color: var(--dark-grey);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 32px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #0a1f1a 100%);
+            color: var(--white);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--light-grey);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+            }
+            .hero h1 {
+                font-size: 40px;
+            }
+            .hero-ctas {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* OVERVIEW SECTION */
+        .overview {
+            padding: 60px 40px;
+            background: var(--light-grey);
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .overview-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .overview-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .overview-card p {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* COMPETITIONS SECTION */
+        .competitions {
+            padding: 80px 40px;
+            background: var(--white);
+        }
+
+        .competitions h2 {
+            font-family: var(--font-serif);
+            font-size: 44px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+
+        /* COMPETITION CARD LAYOUT - CHEGG STYLE */
+        .competition-section {
+            margin-bottom: 80px;
+        }
+
+        .comp-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--light-grey);
+        }
+
+        .comp-icon {
+            font-size: 40px;
+        }
+
+        .comp-header-text h3 {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .comp-header-text p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .comp-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .comp-card {
+            background: var(--light-grey);
+            border-radius: 8px;
+            overflow: hidden;
+            border-top: 5px solid;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comp-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+
+        .comp-card.team {
+            border-top-color: var(--primary);
+        }
+
+        .comp-card.solo {
+            border-top-color: var(--teal);
+        }
+
+        .comp-card-header {
+            padding: 24px;
+            background: var(--white);
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .comp-card-type {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .comp-card-type.team {
+            color: var(--primary);
+        }
+
+        .comp-card-type.solo {
+            color: var(--teal);
+        }
+
+        .comp-card h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+
+        .comp-card-body {
+            padding: 24px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comp-details {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .comp-specs {
+            background: var(--white);
+            padding: 16px;
+            border-radius: 4px;
+            margin-bottom: 24px;
+        }
+
+        .comp-spec {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .comp-spec:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .comp-pricing {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .price-box {
+            background: var(--white);
+            padding: 12px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .price-label {
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .price-amount {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .comp-ctas {
+            display: flex;
+            gap: 12px;
+            margin-top: auto;
+        }
+
+        .btn-sm {
+            padding: 12px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            flex: 1;
+            text-align: center;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary-sm {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary-sm:hover {
+            background: #0d261f;
+        }
+
+        .btn-secondary-sm {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-secondary-sm:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        @media (max-width: 1024px) {
+            .comp-cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* WHY ENTER SECTION */
+        .why-enter {
+            background: var(--light-grey);
+            padding: 80px 40px;
+        }
+
+        .why-enter h2 {
+            font-family: var(--font-serif);
+            font-size: 44px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .why-icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .why-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .why-card p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1024px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* TIMELINE SECTION */
+        .timeline {
+            padding: 80px 40px;
+            background: var(--white);
+        }
+
+        .timeline h2 {
+            font-family: var(--font-serif);
+            font-size: 44px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: -12px;
+            width: calc(100% + 24px);
+            height: 2px;
+            background: var(--light-grey);
+            z-index: -1;
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-marker {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            margin: 0 auto 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-content {
+            background: var(--light-grey);
+            padding: 24px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .timeline-content h4 {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .timeline-content p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1024px) {
+            .timeline-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .timeline-grid {
+                grid-template-columns: 1fr;
+            }
+            .timeline-item::before {
+                left: 24px;
+                width: 2px;
+                height: calc(100% + 24px);
+                top: 48px;
+            }
+            .timeline-marker {
+                margin-left: 0;
+                margin-right: auto;
+            }
+        }
+
+        /* JUDGES SECTION */
+        .judges {
+            background: var(--light-grey);
+            padding: 80px 40px;
+        }
+
+        .judges h2 {
+            font-family: var(--font-serif);
+            font-size: 44px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+
+        .judges-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .judge-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 4px solid var(--primary);
+        }
+
+        .judge-avatar {
+            width: 100px;
+            height: 100px;
+            background: var(--light-grey);
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .judge-card h4 {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .judge-title {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 12px;
+        }
+
+        .judge-card p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1024px) {
+            .judges-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .judges-grid {
+                grid-template-columns: 1fr;
+            }
+            .judges h2 {
+                font-size: 32px;
+            }
+        }
+
+        /* FAQ SECTION */
+        .faq {
+            padding: 80px 40px;
+            background: var(--white);
+        }
+
+        .faq h2 {
+            font-family: var(--font-serif);
+            font-size: 44px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--light-grey);
+            padding: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .faq-toggle {
+            color: var(--teal);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq h2 {
+                font-size: 32px;
+            }
+        }
+
+        /* FINAL CTA */
+        .final-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-family: var(--font-serif);
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .final-cta {
+                padding: 60px 20px;
+            }
+            .final-cta h2 {
+                font-size: 36px;
+            }
+            .final-cta-buttons {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* FOOTER */
+        footer {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 60px 40px;
+            font-size: 13px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+
+        .footer-col h4 {
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .footer-col p {
+            margin-bottom: 8px;
+        }
+
+        .footer-col a {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: #888;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- URGENCY BANNER -->
+    <div class="urgency">
+        ⏰ EARLY BIRD PRICING ENDS SEPTEMBER 30 | $25/student (normally $30) | Register Now
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">EHV Competitions</div>
+        <nav>
+            <a href="#overview">Overview</a>
+            <a href="#timeline">Timeline</a>
+            <a href="#faq">FAQ</a>
+            <a href="/">Back to EHV</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Compete Globally. Win Real Credentials.</h1>
+        <p>Three international competitions. Team or solo entry. Live finals December 4–6 in Hong Kong or Bangkok.</p>
+        <div class="hero-ctas">
+            <a href="#competitions" class="btn btn-primary">View Competitions</a>
+            <a href="#timeline" class="btn btn-secondary">See Timeline</a>
+        </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="overview" id="overview">
+        <div class="overview-grid">
+            <div class="overview-card">
+                <h3>Reach</h3>
+                <p>30+ Countries</p>
+            </div>
+            <div class="overview-card">
+                <h3>Judges</h3>
+                <p>50+ Experts</p>
+            </div>
+            <div class="overview-card">
+                <h3>Participants</h3>
+                <p>2,000+ Students</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPETITIONS -->
+    <section class="competitions" id="competitions">
+        <h2>Three Competitions. One Week. Multiple Paths.</h2>
+
+        <!-- A-ISPC -->
+        <div class="competition-section">
+            <div class="comp-header">
+                <div class="comp-icon">🔬</div>
+                <div class="comp-header-text">
+                    <h3>A-ISPC 2026</h3>
+                    <p>International AI-Assisted Science Project Competition</p>
+                </div>
+            </div>
+
+            <div class="comp-cards-grid">
+                <!-- TEAM TRACK -->
+                <div class="comp-card team">
+                    <div class="comp-card-header">
+                        <div class="comp-card-type team">👥 Team Track</div>
+                        <h4>Science Project (2–3 Students)</h4>
+                    </div>
+                    <div class="comp-card-body">
+                        <p class="comp-details">Collaborate on a real SE Asian phenomenon. Use AI tools for analysis and prediction. Present live at finals.</p>
+                        
+                        <div class="comp-specs">
+                            <div class="comp-spec">Online qualifying: 8-min video presentation</div>
+                            <div class="comp-spec">Finals: 12-min live presentation + 5-min Q&A</div>
+                            <div class="comp-spec">Judged against other teams only</div>
+                        </div>
+
+                        <div class="comp-pricing">
+                            <div class="price-box">
+                                <div class="price-label">Early bird</div>
+                                <div class="price-amount">$25</div>
+                            </div>
+                            <div class="price-box">
+                                <div class="price-label">Standard</div>
+                                <div class="price-amount">$30</div>
+                            </div>
+                        </div>
+
+                        <div class="comp-ctas">
+                            <a href="https://aispc2026.org" class="btn-sm btn-secondary-sm">Learn More</a>
+                            <a href="https://aispc2026.org" class="btn-sm btn-primary-sm">Register</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INDIVIDUAL TRACK -->
+                <div class="comp-card solo">
+                    <div class="comp-card-header">
+                        <div class="comp-card-type solo">⭐ Individual Track</div>
+                        <h4>Science Research (Solo)</h4>
+                    </div>
+                    <div class="comp-card-body">
+                        <p class="comp-details">Deep dive into your own SE Asian science question. Use AI at every stage. Present and own your research.</p>
+                        
+                        <div class="comp-specs">
+                            <div class="comp-spec">Online qualifying: 6-min video presentation</div>
+                            <div class="comp-spec">Finals: 8-min live presentation + 5-min Q&A</div>
+                            <div class="comp-spec">Judged against other solo entrants only</div>
+                        </div>
+
+                        <div class="comp-pricing">
+                            <div class="price-box">
+                                <div class="price-label">Early bird</div>
+                                <div class="price-amount">$25</div>
+                            </div>
+                            <div class="price-box">
+                                <div class="price-label">Standard</div>
+                                <div class="price-amount">$30</div>
+                            </div>
+                        </div>
+
+                        <div class="comp-ctas">
+                            <a href="https://aispc2026.org" class="btn-sm btn-secondary-sm">Learn More</a>
+                            <a href="https://aispc2026.org" class="btn-sm btn-primary-sm">Register Solo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- A-IBFC -->
+        <div class="competition-section">
+            <div class="comp-header">
+                <div class="comp-icon">💼</div>
+                <div class="comp-header-text">
+                    <h3>A-IBFC 2026</h3>
+                    <p>Asia International Business & Finance Challenge</p>
+                </div>
+            </div>
+
+            <div class="comp-cards-grid">
+                <!-- TRACK 1: FINANCIAL LITERACY (TEAM) -->
+                <div class="comp-card team">
+                    <div class="comp-card-header">
+                        <div class="comp-card-type team">👥 Team Track</div>
+                        <h4>Financial Literacy (Gr 7–9)</h4>
+                    </div>
+                    <div class="comp-card-body">
+                        <p class="comp-details">Master personal and business finance. Compete in live quiz bowl format. Real market scenarios, real decision-making.</p>
+                        
+                        <div class="comp-specs">
+                            <div class="comp-spec">Online qualifying: 30-min MCQ exam</div>
+                            <div class="comp-spec">Finals: Live quiz bowl competition</div>
+                            <div class="comp-spec">Team of 3 students</div>
+                        </div>
+
+                        <div class="comp-pricing">
+                            <div class="price-box">
+                                <div class="price-label">Early bird</div>
+                                <div class="price-amount">$25</div>
+                            </div>
+                            <div class="price-box">
+                                <div class="price-label">Standard</div>
+                                <div class="price-amount">$30</div>
+                            </div>
+                        </div>
+
+                        <div class="comp-ctas">
+                            <a href="https://aibfc.org" class="btn-sm btn-secondary-sm">Learn More</a>
+                            <a href="https://aibfc.org" class="btn-sm btn-primary-sm">Register</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TRACK 2: ENTREPRENEURSHIP (TEAM) -->
+                <div class="comp-card team">
+                    <div class="comp-card-header">
+                        <div class="comp-card-type team">👥 Team Track</div>
+                        <h4>Entrepreneurship (Gr 10–12)</h4>
+                    </div>
+                    <div class="comp-card-body">
+                        <p class="comp-details">Build a business idea. Write a real proposal. Pitch to judges. Compete for investment and recognition.</p>
+                        
+                        <div class="comp-specs">
+                            <div class="comp-spec">Online qualifying: 45-min exam + essay</div>
+                            <div class="comp-spec">Finals: 8-min pitch + 5-min Q&A</div>
+                            <div class="comp-spec">Team of 2–3 students</div>
+                        </div>
+
+                        <div class="comp-pricing">
+                            <div class="price-box">
+                                <div class="price-label">Early bird</div>
+                                <div class="price-amount">$25</div>
+                            </div>
+                            <div class="price-box">
+                                <div class="price-label">Standard</div>
+                                <div class="price-amount">$30</div>
+                            </div>
+                        </div>
+
+                        <div class="comp-ctas">
+                            <a href="https://aibfc.org" class="btn-sm btn-secondary-sm">Learn More</a>
+                            <a href="https://aibfc.org" class="btn-sm btn-primary-sm">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EMERALD PRIZE -->
+        <div class="competition-section">
+            <div class="comp-header">
+                <div class="comp-icon">🎨</div>
+                <div class="comp-header-text">
+                    <h3>Emerald Prize 2026</h3>
+                    <p>International Student Art Competition</p>
+                </div>
+            </div>
+
+            <div class="comp-cards-grid">
+                <!-- CATEGORY A -->
+                <div class="comp-card solo">
+                    <div class="comp-card-header">
+                        <div class="comp-card-type solo">🖌️ Category A</div>
+                        <h4>Traditional Art (Individual)</h4>
+                    </div>
+                    <div class="comp-card-body">
+                        <p class="comp-details">Draw, paint, sculpt, collage. Your art. Your voice. Displayed in professional gallery at finals week.</p>
+                        
+                        <div class="comp-specs">
+                            <div class="comp-spec">Submission: 1 original artwork + photo</div>
+                            <div class="comp-spec">Judged on creativity, technique, impact</div>
+                            <div class="comp-spec">All ages welcome (Primary / Middle / Senior)</div>
+                        </div>
+
+                        <div class="comp-pricing">
+                            <div class="price-box">
+                                <div class="price-label">Early bird</div>
+                                <div class="price-amount">$25</div>
+                            </div>
+                            <div class="price-box">
+                                <div class="price-label">Standard</div>
+                                <div class="price-amount">$30</div>
+                            </div>
+                        </div>
+
+                        <div class="comp-ctas">
+                            <a href="https://emeraldprize.com" class="btn-sm btn-secondary-sm">Learn More</a>
+                            <a href="https://emeraldprize.com" class="btn-sm btn-primary-sm">Submit</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORY B -->
+                <div class="comp-card solo">
+                    <div class="comp-card-header">
+                        <div class="comp-card-type solo">✨ Category B</div>
+                        <h4>AI-Assisted Design (Individual)</h4>
+                    </div>
+                    <div class="comp-card-body">
+                        <p class="comp-details">Create with AI tools (Canva, Midjourney, Procreate). Show your process. Prove your creative vision. Judged separately from traditional art.</p>
+                        
+                        <div class="comp-specs">
+                            <div class="comp-spec">Submission: 1 digital artwork + process doc</div>
+                            <div class="comp-spec">Show your creative process (1-page brief)</div>
+                            <div class="comp-spec">All ages welcome</div>
+                        </div>
+
+                        <div class="comp-pricing">
+                            <div class="price-box">
+                                <div class="price-label">Early bird</div>
+                                <div class="price-amount">$25</div>
+                            </div>
+                            <div class="price-box">
+                                <div class="price-label">Standard</div>
+                                <div class="price-amount">$30</div>
+                            </div>
+                        </div>
+
+                        <div class="comp-ctas">
+                            <a href="https://emeraldprize.com" class="btn-sm btn-secondary-sm">Learn More</a>
+                            <a href="https://emeraldprize.com" class="btn-sm btn-primary-sm">Submit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY ENTER -->
+    <section class="why-enter">
+        <h2>Why Enter EHV Competitions?</h2>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">🌍</div>
+                <h3>Global Recognition</h3>
+                <p>Compete with 2,000+ students from 30+ countries. Credential that universities actually notice.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">✓</div>
+                <h3>Real Judges</h3>
+                <p>University faculty, published researchers, Olympiad medalists. Not a participation trophy.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🏆</div>
+                <h3>Real Medals</h3>
+                <p>Gold / Silver / Bronze separate for teams AND solo entrants. Equal prestige, separate categories.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🎯</div>
+                <h3>Life-Changing Week</h3>
+                <p>Finals week in Hong Kong or Bangkok. Network with top students. Meet your peers from around the world.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="timeline" id="timeline">
+        <h2>The Journey</h2>
+        <div class="timeline-grid">
+            <div class="timeline-item">
+                <div class="timeline-marker">1</div>
+                <div class="timeline-content">
+                    <h4>Now – Sept 30</h4>
+                    <p>Register & Prepare</p>
+                    <p style="font-size: 12px; margin-top: 8px;">$25 early bird. Free resources & Q&A.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker">2</div>
+                <div class="timeline-content">
+                    <h4>November</h4>
+                    <p>Qualifying Round</p>
+                    <p style="font-size: 12px; margin-top: 8px;">Online exams & submissions. Finalists announced.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker">3</div>
+                <div class="timeline-content">
+                    <h4>Dec 4–6</h4>
+                    <p>Finals Week</p>
+                    <p style="font-size: 12px; margin-top: 8px;">Live in HK or Bangkok. Judging & awards.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker">4</div>
+                <div class="timeline-content">
+                    <h4>Year 2</h4>
+                    <p>Return or Ascend</p>
+                    <p style="font-size: 12px; margin-top: 8px;">Many winners go deeper. Build your legacy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JUDGES -->
+    <section class="judges">
+        <h2>Who's Judging?</h2>
+        <div class="judges-grid">
+            <div class="judge-card">
+                <div class="judge-avatar">👨‍🎓</div>
+                <h4>Dr. Berik Sabdenaliyev</h4>
+                <div class="judge-title">Dean of Social Sciences, SDU University</div>
+                <p>Lead judge for A-IBFC. Published researcher in economics and business development.</p>
+            </div>
+            <div class="judge-card">
+                <div class="judge-avatar">👩‍💼</div>
+                <h4>Almat Zhailaubayev</h4>
+                <div class="judge-title">VP Finance, North American University</div>
+                <p>CFO mentor for A-IBFC teams. Real-world business acumen and university insider.</p>
+            </div>
+            <div class="judge-card">
+                <div class="judge-avatar">🥇</div>
+                <h4>Fetullakh Sam</h4>
+                <div class="judge-title">HKUST | IMO 2× Silver | IZhO Gold</div>
+                <p>Olympiad mentorship for A-ISPC. Teaches competitive science & problem-solving.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <h2>Questions? Answers.</h2>
+        <div class="faq-grid">
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    <span>Can I compete solo or do I need a team?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Both! Solo and team entrants are judged separately and compete for their own medals. No competition between the two—equal prestige.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    <span>What's the difference between early bird and standard?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Early bird is $25/student (ends Sept 30). Standard is $30/student. That's it—no hidden fees.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    <span>Where are finals and when?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    December 4–6, 2026 at Cyberport, Hong Kong (or Bangkok as backup). All competitions happen the same week.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    <span>What if I don't make finals?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    All qualifiers get detailed feedback from judges on their submission. Many return Year 2 stronger.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    <span>Do you offer school discounts?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes. 10+ students from same school = $20/student. Email competitions@emeraldhv.com for quote.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-question">
+                    <span>Can I enter multiple competitions?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes. You can enter A-ISPC + A-IBFC + Emerald Prize in the same finals week. All happen simultaneously but don't conflict.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <h2>Ready to Compete?</h2>
+        <p>Early bird pricing ($25/student) ends September 30. Register your team, go solo, or submit art—your choice. Limited spots for Hong Kong finals Dec 4–6.</p>
+        <div class="final-cta-buttons">
+            <a href="https://aispc2026.org" class="btn btn-primary">Register for A-ISPC</a>
+            <a href="https://aibfc.org" class="btn btn-primary">Register for A-IBFC</a>
+            <a href="https://emeraldprize.com" class="btn btn-primary">Submit to Emerald Prize</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Competitions</h4>
+                <p>A-ISPC 2026</p>
+                <p>A-IBFC 2026</p>
+                <p>Emerald Prize 2026</p>
+                <p><a href="/">Main EHV</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:competitions@emeraldhv.com">competitions@emeraldhv.com</a></p>
+                <p>WhatsApp: +66 61 075 8421</p>
+                <p>24-hour response</p>
+            </div>
+            <div class="footer-col">
+                <h4>Venues</h4>
+                <p>Finals: Cyberport, Hong Kong</p>
+                <p>Backup: Bangkok</p>
+                <p>Dec 4–6, 2026</p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <p><a href="#">Terms & Conditions</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">Accessibility</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Emerald Horizon Ventures. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

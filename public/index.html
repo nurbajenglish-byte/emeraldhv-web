@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emerald Horizon Ventures | International Competitions & Study Tours | $25 Early Bird</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1A3C34;
+            --teal: #0D7A5F;
+            --gold: #C8A84B;
+            --dark-grey: #2C3E50;
+            --light-grey: #F5F7FA;
+            --cream: #FAFAF8;
+            --white: #FFFFFF;
+            --serif: 'Cormorant Garamond', serif;
+            --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--sans);
+            color: var(--dark-grey);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        /* STICKY URGENCY - THINKIFIC MODEL */
+        .urgency-bar {
+            position: sticky;
+            top: 0;
+            background: var(--gold);
+            color: var(--white);
+            padding: 12px 20px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 14px;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        /* HEADER - CLEAN & MINIMAL */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--light-grey);
+            padding: 16px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 44px;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: var(--serif);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        nav a {
+            color: var(--dark-grey);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .nav-ctas {
+            display: flex;
+            gap: 16px;
+            margin-left: 40px;
+        }
+
+        .btn-nav {
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-nav:hover {
+            background: #0d261f;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 20px;
+            }
+            nav, .nav-ctas {
+                display: none;
+            }
+        }
+
+        /* HERO - STEVE & KATE'S WARMTH + THINKIFIC SOCIAL PROOF */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #0a1f1a 100%);
+            color: var(--white);
+            padding: 100px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(205, 168, 75, 0.08);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: var(--serif);
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-subheading {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            line-height: 1.5;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* PRICING HERO - THINKIFIC MODEL */
+        .pricing-hero-box {
+            background: rgba(200, 168, 75, 0.15);
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 28px 40px;
+            margin: 32px auto;
+            display: inline-block;
+            max-width: 450px;
+        }
+
+        .pricing-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-bottom: 16px;
+        }
+
+        .pricing-display {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .price-card {
+            text-align: center;
+        }
+
+        .price-when {
+            font-size: 12px;
+            opacity: 0.7;
+            margin-bottom: 6px;
+        }
+
+        .price-num {
+            font-family: var(--serif);
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        /* HERO CTAs */
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 18px 48px;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--light-grey);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .hero-trust {
+            margin-top: 40px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .hero-trust strong {
+            color: var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 20px;
+            }
+            .hero h1 {
+                font-size: 44px;
+            }
+            .hero-subheading {
+                font-size: 18px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* THINKIFIC TRUST BADGES */
+        .trust-logos {
+            background: var(--light-grey);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .trust-text {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 32px;
+            font-weight: 600;
+        }
+
+        .logos-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .logo-item {
+            font-size: 48px;
+            opacity: 0.7;
+        }
+
+        /* PRODUCT STACK - THINKIFIC + CHEGG CARD MODEL */
+        .products {
+            padding: 80px 40px;
+            background: var(--white);
+        }
+
+        .section-heading {
+            font-family: var(--serif);
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .section-subheading {
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--light-grey);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            border-left: 6px solid;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.15);
+        }
+
+        .product-card.comps {
+            border-left-color: var(--primary);
+        }
+
+        .product-card.tours {
+            border-left-color: var(--teal);
+        }
+
+        .product-card.publishing {
+            border-left-color: var(--gold);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #e8e8e8 0%, #f5f5f5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+        }
+
+        .product-body {
+            padding: 32px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-tag {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .product-card.tours .product-tag {
+            color: var(--teal);
+        }
+
+        .product-card.publishing .product-tag {
+            color: var(--gold);
+        }
+
+        .product-title {
+            font-family: var(--serif);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .product-desc {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .product-highlight {
+            background: var(--white);
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--teal);
+        }
+
+        .product-price {
+            font-family: var(--serif);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .product-price-sub {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 24px;
+        }
+
+        .product-ctas {
+            display: flex;
+            gap: 12px;
+            margin-top: auto;
+        }
+
+        .btn-sm {
+            flex: 1;
+            padding: 12px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-primary-sm {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary-sm:hover {
+            background: #0d261f;
+        }
+
+        .btn-secondary-sm {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-secondary-sm:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        @media (max-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-heading {
+                font-size: 36px;
+            }
+        }
+
+        /* SOCIAL PROOF - THINKIFIC MODEL */
+        .social-proof {
+            background: var(--light-grey);
+            padding: 80px 40px;
+        }
+
+        .social-proof h2 {
+            font-family: var(--serif);
+            font-size: 44px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .proof-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .proof-num {
+            font-family: var(--serif);
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .proof-label {
+            font-size: 14px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        @media (max-width: 1024px) {
+            .proof-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .proof-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* TESTIMONIALS - CHEGG MODEL */
+        .testimonials {
+            background: var(--white);
+            padding: 80px 40px;
+        }
+
+        .testimonials h2 {
+            font-family: var(--serif);
+            font-size: 44px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--light-grey);
+            padding: 32px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .testimonial-quote {
+            font-size: 15px;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .testimonial-role {
+            font-size: 12px;
+            color: #999;
+        }
+
+        @media (max-width: 1024px) {
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* FAQ - STEVE & KATE'S MODEL */
+        .faq {
+            background: var(--light-grey);
+            padding: 80px 40px;
+        }
+
+        .faq h2 {
+            font-family: var(--serif);
+            font-size: 44px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .faq-toggle {
+            color: var(--teal);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-a {
+            display: none;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-a {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* FINAL CTA - THINKIFIC MODEL */
+        .final-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-family: var(--serif);
+            font-size: 52px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+        }
+
+        .final-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .final-cta {
+                padding: 60px 20px;
+            }
+            .final-cta h2 {
+                font-size: 36px;
+            }
+            .final-buttons {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* FOOTER */
+        footer {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 60px 40px;
+            font-size: 13px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+
+        .footer-col h4 {
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .footer-col p {
+            margin-bottom: 8px;
+        }
+
+        .footer-col a {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: #888;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- URGENCY BANNER -->
+    <div class="urgency-bar">
+        ⏰ EARLY BIRD PRICING ENDS SEPTEMBER 30 | $25/STUDENT (normally $30) | LIMITED SPOTS
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">EHV</div>
+        <nav>
+            <a href="#products">Programs</a>
+            <a href="#why">Why EHV</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+        <div class="nav-ctas">
+            <a href="#" class="btn-nav">Register</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Compete Globally. Win Real Credentials.</h1>
+            <p class="hero-subheading">International competitions, immersive study tours, and education publishing. Build a portfolio that gets you into top universities.</p>
+
+            <div class="pricing-hero-box">
+                <div class="pricing-label">Registration Through September 30</div>
+                <div class="pricing-display">
+                    <div class="price-card">
+                        <div class="price-when">Early Bird</div>
+                        <div class="price-num">$25</div>
+                    </div>
+                    <div style="color: rgba(255,255,255,0.2); font-size: 20px;">•</div>
+                    <div class="price-card">
+                        <div class="price-when">Oct 1+</div>
+                        <div class="price-num">$30</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="#products" class="btn btn-primary">Explore Programs</a>
+                <a href="#" class="btn btn-secondary">Register Now</a>
+            </div>
+
+            <div class="hero-trust">
+                🏆 <strong>50+ countries</strong> | <strong>50+ expert judges</strong> | <strong>2,000+ competitors</strong> | Finals Dec 4–6
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST LOGOS -->
+    <section class="trust-logos">
+        <p class="trust-text">TRUSTED BY STUDENTS & EDUCATORS WORLDWIDE</p>
+        <div class="logos-grid">
+            <div class="logo-item">🏫</div>
+            <div class="logo-item">🎓</div>
+            <div class="logo-item">🌍</div>
+            <div class="logo-item">🏆</div>
+            <div class="logo-item">🚀</div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products" id="products">
+        <h2 class="section-heading">Three Paths. One Mission.</h2>
+        <p class="section-subheading">Whether you're competing in science, business, or art—or immersing yourself in a global study tour—we have a program designed for your goals.</p>
+
+        <div class="product-grid">
+            <!-- COMPETITIONS -->
+            <div class="product-card comps">
+                <div class="product-image">🏆</div>
+                <div class="product-body">
+                    <div class="product-tag">International Competitions</div>
+                    <h3 class="product-title">A-ISPC & A-IBFC 2026</h3>
+                    <p class="product-desc">Qualify online. Present live at Hong Kong or Bangkok finals Dec 4–6. Team or solo entry—all $25 early bird.</p>
+
+                    <div class="product-highlight">
+                        ✓ 30+ countries | Real judges | Live finals | Separate medals for teams & individuals
+                    </div>
+
+                    <div class="product-price">$25</div>
+                    <div class="product-price-sub">Early bird per student (until Sept 30)</div>
+
+                    <div class="product-ctas">
+                        <a href="https://aispc2026.org" class="btn-sm btn-primary-sm">A-ISPC</a>
+                        <a href="https://aibfc.org" class="btn-sm btn-primary-sm">A-IBFC</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STUDY TOURS -->
+            <div class="product-card tours">
+                <div class="product-image">✈️</div>
+                <div class="product-body">
+                    <div class="product-tag">Immersive Study Tours</div>
+                    <h3 class="product-title">AI & STEM Camps</h3>
+                    <p class="product-desc">7-day all-inclusive programs. Chiang Mai or Bangkok. Flights from Hanoi, Halal meals, co-branded certificates. July 5–11.</p>
+
+                    <div class="product-highlight">
+                        ✓ All-inclusive flights + meals | 12–15 per cohort | Arduino + AI + vlogging
+                    </div>
+
+                    <div class="product-price">$695–895</div>
+                    <div class="product-price-sub">Chiang Mai vs. Bangkok (per student)</div>
+
+                    <div class="product-ctas">
+                        <a href="#tours" class="btn-sm btn-secondary-sm">Learn More</a>
+                        <a href="mailto:tours@emeraldhv.com" class="btn-sm btn-primary-sm">Inquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PUBLISHING -->
+            <div class="product-card publishing">
+                <div class="product-image">📚</div>
+                <div class="product-body">
+                    <div class="product-tag">Education Publishing</div>
+                    <h3 class="product-title">48-Title Library & K–12 Series</h3>
+                    <p class="product-desc">Children's books + A Value-Based Education curriculum. AI-assisted illustrations. Ready to print Q4 2026.</p>
+
+                    <div class="product-highlight">
+                        ✓ 48 children's books | 10 textbooks | 75%+ margins | Global reach
+                    </div>
+
+                    <div class="product-price">Coming Soon</div>
+                    <div class="product-price-sub">Q4 2026 | Pre-order available</div>
+
+                    <div class="product-ctas">
+                        <a href="#" class="btn-sm btn-secondary-sm">Learn More</a>
+                        <a href="mailto:publishing@emeraldhv.com" class="btn-sm btn-primary-sm">Pre-Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section class="social-proof" id="why">
+        <h2>Real Numbers. Real Results.</h2>
+        <div class="proof-grid">
+            <div class="proof-card">
+                <div class="proof-num">2,000+</div>
+                <div class="proof-label">Students Registered (Year 1)</div>
+            </div>
+            <div class="proof-card">
+                <div class="proof-num">50+</div>
+                <div class="proof-label">Countries Represented</div>
+            </div>
+            <div class="proof-card">
+                <div class="proof-num">50+</div>
+                <div class="proof-label">Expert Judges & Mentors</div>
+            </div>
+            <div class="proof-card">
+                <div class="proof-num">87%</div>
+                <div class="proof-label">Better University Outcomes*</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <h2>What Students & Parents Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
+                    "I thought A-ISPC was going to be just another competition. But it was the first time I actually did real research—not a school project. The judges treated me like a real scientist."
+                </div>
+                <div class="testimonial-author">Maya (Grade 10)</div>
+                <div class="testimonial-role">Vietnam, A-ISPC Team Winner 2025</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
+                    "My daughter came home from the study tour speaking English more confidently, excited about STEM, and with friends from 6 countries. Best investment we made."
+                </div>
+                <div class="testimonial-author">Ms. Hoa (Parent)</div>
+                <div class="testimonial-role">Hanoi, July 2025 Cohort</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
+                    "We sent 12 students to the study tour. Every single one came back excited about computer science. Three are now thinking about CS degrees."
+                </div>
+                <div class="testimonial-author">Mr. Tuan (Center Director)</div>
+                <div class="testimonial-role">VUS Vietnam, B2B Partner</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <h2>Questions Answered</h2>
+        <div class="faq-grid">
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-q">
+                    <span>Can I compete solo or do I need a team?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-a">
+                    Both! Solo entrants and teams are judged separately and compete for their own medals. No competition between the two formats—equal prestige, separate podiums.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-q">
+                    <span>What's the difference between $25 and $30?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-a">
+                    $25 is early bird pricing (until Sept 30). After Sept 30, pricing goes to $30 per student. That's it—no hidden fees.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-q">
+                    <span>Where are finals and what's included?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-a">
+                    Finals are December 4–6 at Cyberport, Hong Kong (or Bangkok as backup). Registration includes online qualifying exam access, live presentation slot, judge feedback, and certificate. Travel/accommodation are on you.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-q">
+                    <span>Do you offer group or school discounts?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-a">
+                    Yes. 10+ students from the same school = $20/student early bird (save $5 per person). Email competitions@emeraldhv.com for bulk quotes.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-q">
+                    <span>What if I don't make finals?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-a">
+                    All qualifiers get detailed feedback from judges. You'll know exactly what worked and what to improve. Many students return Year 2 significantly stronger.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('active')">
+                <div class="faq-q">
+                    <span>Do you offer financial aid or scholarships?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-a">
+                    Contact us at competitions@emeraldhv.com to discuss scholarship opportunities and payment plans. We work with schools and organizations on group sponsorships.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <h2>Ready to Build a Credential That Matters?</h2>
+        <p>Early bird pricing ($25/student) ends September 30. Limited spots for Hong Kong/Bangkok finals Dec 4–6. Whether you compete solo, team up, or explore our study tours—register today.</p>
+        <div class="final-buttons">
+            <a href="https://aispc2026.org" class="btn btn-primary">Competition Registration</a>
+            <a href="mailto:tours@emeraldhv.com" class="btn btn-secondary">Study Tour Inquiry</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>EHV</h4>
+                <p>Emerald Horizon Ventures Limited</p>
+                <p>Hong Kong-registered</p>
+                <p>Operations: Chiang Mai, Thailand</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Email: competitions@emeraldhv.com</p>
+                <p>Email: tours@emeraldhv.com</p>
+                <p>WhatsApp: +66 61 075 8421</p>
+            </div>
+            <div class="footer-col">
+                <h4>Programs</h4>
+                <p><a href="https://aispc2026.org">A-ISPC 2026</a></p>
+                <p><a href="https://aibfc.org">A-IBFC 2026</a></p>
+                <p><a href="https://emeraldprize.com">Emerald Prize</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <p><a href="#">Terms & Conditions</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">Accessibility</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Emerald Horizon Ventures. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#') && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
