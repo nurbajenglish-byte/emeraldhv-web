@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A-IBFC 2026 — Asia International Business &amp; Finance Challenge</title>
-<meta name="description" content="The inaugural Asia International Business & Finance Challenge for Grades 7–12. Qualify online, compete at the international finals in Hong Kong or Bangkok, earn a university-ready credential. Early-bird from $65.">
+<meta name="description" content="The inaugural Asia International Business & Finance Challenge — open worldwide, Grades 7–12. 40-question qualifying exam, 60 minutes. Compete at the international finals in Hong Kong or Bangkok. Early-bird $25.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
@@ -79,6 +79,7 @@ section.band{padding:92px 0}
 
 /* value grid */
 .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;counter-reset:s}
 .vcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 24px;transition:transform .3s,box-shadow .3s,border-color .3s}
 .vcard:hover{transform:translateY(-5px);box-shadow:0 20px 40px -28px rgba(26,60,52,.45);border-color:var(--gold-soft)}
 .vcard .ic{width:42px;height:42px;border-radius:11px;background:#eef5f0;display:grid;place-items:center;color:var(--teal);margin-bottom:16px}
@@ -101,7 +102,6 @@ section.band{padding:92px 0}
 .track.flag .ribbon{position:absolute;top:18px;right:-34px;transform:rotate(45deg);background:var(--gold);color:#23200f;font-size:.66rem;font-weight:700;letter-spacing:.12em;padding:5px 42px}
 
 /* steps */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
 .step{position:relative;padding:30px 26px;background:#fff;border:1px solid var(--line);border-radius:16px}
 .step .n{font-family:"Cormorant Garamond",serif;font-size:2.6rem;font-weight:600;color:var(--gold);line-height:1}
 .step .when{font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin:14px 0 6px}
@@ -245,7 +245,7 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
 </head>
 <body>
 
-<div class="promo">First edition · Early-bird pricing ends in <span id="pc">—</span> — <b>save $10 on every entry</b></div>
+<div class="promo">First edition · Worldwide · $25 flat early-bird — ends in <span id="pc">—</span></div>
 
 <header>
   <div class="wrap nav">
@@ -265,14 +265,14 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="wrap">
-    <span class="seal"><i></i>First Edition · 2026</span>
-    <h1 class="disp">Compete in business. Pitch in Hong Kong. <em>Leave with a credential.</em></h1>
-    <p class="sub">The Asia International Business &amp; Finance Challenge brings ambitious students in Grades 7&ndash;12 together from 50+ countries. Qualify online, reach the international finals in Hong Kong or Bangkok, and earn a university-ready credential &mdash; judged by real finance leaders.</p>
+    <span class="seal"><i></i>First Edition · 2026 · Worldwide</span>
+    <h1 class="disp">Compete in business. Take the <em>international stage.</em></h1>
+    <p class="sub">The Asia International Business &amp; Finance Challenge is open to students worldwide, Grades 7&ndash;12 &mdash; not a regional contest. One online qualifying exam, 40 questions in 60 minutes, then the international finals in Hong Kong or Bangkok &mdash; judged by real finance leaders.</p>
     <div class="cta-row">
-      <a class="btn btn-gold" href="#pricing">Register &mdash; early bird from $65</a>
+      <a class="btn btn-gold" href="#pricing">Register &mdash; early bird $25</a>
       <a class="btn btn-ghost" href="#tracks">See the two tracks</a>
     </div>
-    <p class="micro">Registration opens <b>1 July 2026</b> &middot; Early-bird pricing through <b>30 September</b> &middot; Online qualifying round, finals in December.</p>
+    <p class="micro">Registration opens <b>1 July 2026</b> &middot; Early-bird pricing through <b>30 September</b> &middot; Qualifying exam <b>16&ndash;17 October</b> &middot; Finals <b>4&ndash;6 December, Hong Kong or Bangkok</b>.</p>
   </div>
   <div class="trust">
     <div class="wrap">
@@ -297,7 +297,7 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
       <div class="vcard rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 5l5 5-3 3-5-5zM4 20l6-6M9 9l4 4"/></svg></div><h3>Judged by real leaders</h3><p>University finance deans, a serving CFO, and award-winning scholars from HKUST and CityU review your work.</p></div>
       <div class="vcard rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18"/></svg></div><h3>Beginner-friendly by design</h3><p>No prior finance background needed. Free practice exams, study sets and games get first-timers competition-ready.</p></div>
       <div class="vcard rv"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3>An international stage</h3><p>Top teams compete live at the finals in Hong Kong or Bangkok &mdash; a genuine international experience, not a webinar.</p></div>
-      <div class="vcard rv"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg></div><h3>A global field</h3><p>Compete alongside students from 50+ countries and see where you stand on the live country leaderboard.</p></div>
+      <div class="vcard rv"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg></div><h3>A genuinely worldwide field</h3><p>Open to entrants from any country &mdash; not a regional contest. Compete alongside students from 50+ countries on the live leaderboard.</p></div>
       <div class="vcard rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 21V4h11l-1.5 3L16 10H5"/></svg></div><h3>Founding-cohort recognition</h3><p>This is Year One. The first names on the A-IBFC record are written in 2026 &mdash; a smaller field and a real shot at the finals.</p></div>
     </div>
   </div>
@@ -317,9 +317,9 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
         <h3>Financial Literacy</h3>
         <div class="grades">Foundations of money, saving &amp; smart decisions</div>
         <ul>
-          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> 30-question online round, 45 minutes</li>
-          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Live team quiz-bowl final</li>
-          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Built on real ASEAN money scenarios</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> 40-question qualifying exam, 60 minutes</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Live team quiz-bowl at the finals</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Open worldwide &mdash; not a regional contest</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Ideal for confident first-time competitors</li>
         </ul>
         <p class="best"><b>Best for:</b> younger teams building the fundamentals every future professional needs.</p>
@@ -330,8 +330,8 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
         <h3>Entrepreneurship</h3>
         <div class="grades">Build the idea. Defend it on stage.</div>
         <ul>
-          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> 20 MCQ + a 300-word business response</li>
-          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> 8-minute live pitch to the judging panel</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> 40-question qualifying exam, 60 minutes</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Live pitch final for qualifying teams</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Scored on viability, not just theory</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Direct feedback from a serving CFO &amp; business dean</li>
         </ul>
@@ -345,13 +345,15 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
 <section class="band" id="how">
   <div class="wrap">
     <div class="shead rv">
-      <span class="eyebrow">How it works</span>
-      <h2>Three steps from sign-up to the finals stage.</h2>
+      <span class="eyebrow">The road to the finals</span>
+      <h2>Four months. One exam. One stage.</h2>
     </div>
     <div class="steps">
-      <div class="step rv"><div class="n">01</div><div class="when">July – October</div><h3>Register &amp; prepare</h3><p>Sign up your team in minutes. Get instant access to practice exams, Quizlet sets and Kahoot games &mdash; all free.</p></div>
-      <div class="step rv"><div class="n">02</div><div class="when">November</div><h3>Qualify online</h3><p>Sit the timed qualifying round from your own school. Top teams in each track advance to the international finals.</p></div>
-      <div class="step rv"><div class="n">03</div><div class="when">December 4–6</div><h3>Compete at the finals</h3><p>Qualifying teams compete live in Hong Kong or Bangkok, with a joint awards ceremony to close the weekend.</p></div>
+      <div class="step rv"><div class="n">01</div><div class="when">Now – 30 September</div><h3>Early-bird registration</h3><p>Register your team or individual entry and lock in the $25 flat rate before it rises to $30 on 1 October.</p></div>
+      <div class="step rv"><div class="n">02</div><div class="when">Now – 15 October</div><h3>Prepare</h3><p>Free practice exams, glossary and Quizlet sets. Both tracks share the same exam format: 40 questions, 60 minutes.</p></div>
+      <div class="step rv"><div class="n">03</div><div class="when">16–17 October</div><h3>Qualifying exam</h3><p>Sit the timed online exam from your own school &mdash; 40 questions in 60 minutes, open to entrants worldwide.</p></div>
+      <div class="step rv"><div class="n">04</div><div class="when">30 October</div><h3>Results &amp; finalist notification</h3><p>Qualifying teams and individuals are invited to the international finals in December.</p></div>
+      <div class="step rv"><div class="n">05</div><div class="when">4–6 December</div><h3>International finals — Hong Kong or Bangkok</h3><p>Live finals, judge panel feedback, and a joint awards ceremony with A-ISPC and Emerald Prize.</p></div>
     </div>
   </div>
 </section>
@@ -361,7 +363,7 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
   <div class="wrap">
     <div class="shead center rv">
       <span class="eyebrow center">Entry &amp; pricing</span>
-      <h2>Lock in early-bird pricing before 30 September.</h2>
+      <h2>One flat rate. Lock it in before 30 September.</h2>
       <p>One flat entry per team or individual. No hidden fees &mdash; every participant receives an official certificate.</p>
       <div class="cdown"><span class="dot"></span> Early-bird ends in <span id="ct">—</span></div>
     </div>
@@ -369,11 +371,11 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
       <div class="plan rv">
         <span class="kind">Team entry</span>
         <h3>Financial Literacy</h3><div class="grds">Grades 7–9</div>
-        <div class="price"><span class="now">$65</span><span class="was">$75</span></div>
+        <div class="price"><span class="now">$25</span><span class="was">$30</span></div>
         <div class="unit">per team · early-bird rate</div>
-        <span class="eb">Save $10 before 30 Sep</span>
+        <span class="eb">Save $5 before 30 Sep</span>
         <ul>
-          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> 30-question online qualifier</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> 40-question qualifying exam, 60 min</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Live quiz-bowl final</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Free practice exams &amp; study sets</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Certificate for every team member</li>
@@ -384,12 +386,12 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
         <div class="pbadge">Most popular</div>
         <span class="kind">Team entry</span>
         <h3>Entrepreneurship</h3><div class="grds">Grades 10–12</div>
-        <div class="price"><span class="now">$65</span><span class="was">$75</span></div>
+        <div class="price"><span class="now">$25</span><span class="was">$30</span></div>
         <div class="unit">per team · early-bird rate</div>
-        <span class="eb">Save $10 before 30 Sep</span>
+        <span class="eb">Save $5 before 30 Sep</span>
         <ul>
-          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> MCQ + written business response</li>
-          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> 8-minute live pitch final</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> 40-question qualifying exam, 60 min</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Live pitch final for qualifying teams</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Judge feedback from a serving CFO</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Certificate for every team member</li>
         </ul>
@@ -402,10 +404,10 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
         <div class="unit">per student · early-bird rate</div>
         <span class="eb">Save $10 before 30 Sep</span>
         <ul>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> One week of live online lessons from leading experts</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Individual university credential</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Verifiable certificate for applications</li>
           <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Enter alongside any track, or on its own</li>
-          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12.5l4.5 4.5L19 7"/></svg> Designed to strengthen a student profile</li>
         </ul>
         <a class="btn btn-outline" href="https://ehvcompetitions.com">Add Portfolio Pathway</a>
       </div>
@@ -493,10 +495,13 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
     </div>
     <details class="rv"><summary>Who can enter?<span class="pm"></span></summary><p>Any student in Grades 7&ndash;12, from any school, in any country. Financial Literacy is for Grades 7&ndash;9; Entrepreneurship for Grades 10&ndash;12; the Portfolio Pathway is open to all grades.</p></details>
     <details class="rv"><summary>Do students need a finance background?<span class="pm"></span></summary><p>No. This is the first edition and it&rsquo;s built to be beginner-friendly. Every registration includes free practice exams, study sets and games so a motivated first-timer can prepare from scratch.</p></details>
-    <details class="rv"><summary>Do we have to travel?<span class="pm"></span></summary><p>The qualifying round in November is online &mdash; teams sit it from their own school. Only teams that qualify attend the December finals in Hong Kong or Bangkok.</p></details>
+    <details class="rv"><summary>What does the qualifying exam look like?<span class="pm"></span></summary><p>Both tracks share the same format: 40 questions in one 60-minute sitting, taken online on 16&ndash;17 October. Results and finalist invitations follow on 30 October.</p></details>
+    <details class="rv"><summary>What do Portfolio Pathway students receive?<span class="pm"></span></summary><p>One week of live online lessons from leading experts, plus an individual, verifiable credential built to strengthen a university application &mdash; on top of everything in the team tracks.</p></details>
+    <details class="rv"><summary>Do we have to travel?<span class="pm"></span></summary><p>The qualifying exam on 16&ndash;17 October is online &mdash; sit it from your own school. Only those who qualify travel, to the international finals in Hong Kong or Bangkok, 4&ndash;6 December.</p></details>
     <details class="rv"><summary>What does every participant get?<span class="pm"></span></summary><p>An official certificate. Finalists additionally earn distinction certificates, medals and trophies, plus written feedback from the judging panel.</p></details>
-    <details class="rv"><summary>How and when do we pay?<span class="pm"></span></summary><p>Registration opens 1 July 2026 and is paid securely online by card. Early-bird pricing ($65 per team / $85 Portfolio Pathway) runs through 30 September; standard pricing applies from 1 October.</p></details>
+    <details class="rv"><summary>How and when do we pay?<span class="pm"></span></summary><p>Registration opens 1 July 2026 and is paid securely online by card. Early-bird pricing ($25 per team / $85 Portfolio Pathway) runs through 30 September; standard pricing ($30 / $95) applies from 1 October.</p></details>
     <details class="rv"><summary>Can one teacher register several teams?<span class="pm"></span></summary><p>Yes. A school coordinator can register multiple teams in bulk and manage them from one account. Email us to be set up as a coordinator.</p></details>
+    <details class="rv"><summary>What is the refund policy?<span class="pm"></span></summary><p>Full refunds are available until 9 October 2026 &mdash; one week before the qualifying exam. After that date, registration fees are non-refundable, as exam logistics are committed based on entry counts. If A-IBFC 2026 is cancelled by the organisers, all fees are refunded in full.</p></details>
   </div>
 </section>
 
@@ -504,12 +509,12 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
 <section class="final" id="register">
   <div class="wrap">
     <h2 class="disp">Be one of the <em>first</em> names on the A-IBFC record.</h2>
-    <p>Founding-cohort entries open 1 July 2026. Lock in early-bird pricing and give your students an international stage and a credential to show for it.</p>
+    <p>Founding-cohort entries open 1 July 2026. Lock in the $25 early-bird rate and give your students a worldwide stage and a credential to show for it.</p>
     <div class="cta-row">
-      <a class="btn btn-gold" href="https://ehvcompetitions.com">Register &mdash; early bird from $65</a>
+      <a class="btn btn-gold" href="https://ehvcompetitions.com">Register &mdash; early bird $25</a>
       <a class="btn btn-ghost" href="mailto:competitions@emeraldhv.com?subject=A-IBFC%20Enquiry">Talk to the team</a>
     </div>
-    <p class="micro">Online qualifier in November · International finals 4&ndash;6 December · Hong Kong / Bangkok</p>
+    <p class="micro">Qualifying exam 16&ndash;17 October · Results 30 October · International finals 4&ndash;6 December, Hong Kong or Bangkok</p>
   </div>
 </section>
 
