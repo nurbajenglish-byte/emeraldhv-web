@@ -17,6 +17,11 @@
   status = 200
 
 [[redirects]]
+  from = "/prep"
+  to = "/aibfc-prep.html"
+  status = 200
+
+[[redirects]]
   from = "/aispc"
   to = "/aispc.html"
   status = 200
@@ -68,6 +73,18 @@
 [[redirects]]
   from = "https://www.emeraldprize.com/*"
   to = "/emeraldprize.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://aibfc.org/prep"
+  to = "/aibfc-prep.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://www.aibfc.org/prep"
+  to = "/aibfc-prep.html"
   status = 200
   force = true
 
