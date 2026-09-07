@@ -65,6 +65,18 @@
   force = true
 
 [[redirects]]
+  from = "https://emeraldprize.com/assets/*"
+  to = "/assets/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://www.emeraldprize.com/assets/*"
+  to = "/assets/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "https://emeraldprize.com/*"
   to = "/emeraldprize.html"
   status = 200
@@ -85,6 +97,18 @@
 [[redirects]]
   from = "https://www.aibfc.org/prep"
   to = "/aibfc-prep.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://aibfc.org/assets/*"
+  to = "/assets/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://www.aibfc.org/assets/*"
+  to = "/assets/:splat"
   status = 200
   force = true
 
