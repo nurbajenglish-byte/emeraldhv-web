@@ -21,15 +21,24 @@
   to = "/aibfc-prep.html"
   status = 200
 
+# A-ISPC lives on its own domain now. The old on-site copy is retired (it carried outdated venue/pricing info).
 [[redirects]]
   from = "/aispc"
-  to = "/aispc.html"
-  status = 200
+  to = "https://aispc2026.org"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/aispc/*"
-  to = "/aispc.html"
-  status = 200
+  to = "https://aispc2026.org"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/aispc.html"
+  to = "https://aispc2026.org"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/tour"
