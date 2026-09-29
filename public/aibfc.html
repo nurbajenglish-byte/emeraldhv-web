@@ -272,6 +272,12 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
       <a class="btn btn-gold" href="#pricing">Register &mdash; $30</a>
       <a class="btn btn-ghost" href="#tracks">See the two tracks</a>
       <a class="btn btn-outline" href="/assets/AIBFC_2026_Preparation_Guide.pdf" target="_blank" rel="noopener">Free prep guide (PDF)</a>
+      <button type="button" class="btn btn-outline" onclick="document.getElementById('examInfoBox').style.display='block';this.style.display='none';">Exam Info</button>
+    </div>
+    <div id="examInfoBox" style="display:none;margin-top:14px;padding:16px 20px;background:var(--cream);border:1px solid var(--line);border-radius:10px;position:relative;max-width:560px;">
+      <button type="button" onclick="document.getElementById('examInfoBox').style.display='none';document.querySelector('.cta-row button.btn').style.display='inline-block';" style="position:absolute;top:10px;right:12px;background:none;border:none;font-size:18px;line-height:1;color:var(--muted);cursor:pointer;">&times;</button>
+      <strong style="color:var(--forest);">Qualifying Exam Schedule</strong>
+      <p style="margin:8px 0 0;font-size:14.5px;color:var(--ink);">Main sitting: <b>Saturday, 17 October 2026, 16:00&ndash;17:00 Hong Kong time</b> (check-in 15:40).<br>Make-up sitting: <b>Sunday, 18 October</b>, same time, for anyone who can't attend the main day.<br><br>Registered students receive their personal access code and exam link by email before the exam. This page will be updated with a direct exam link closer to the date.</p>
     </div>
     <p class="micro">Registration open now &middot; $30 flat rate &middot; Qualifying exam <b>Sat 17 October, 16:00&ndash;17:00 Hong Kong time</b> (check-in 15:40) &middot; Finals <b>4&ndash;6 December, Hong Kong</b>.</p>
   </div>
