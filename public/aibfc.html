@@ -241,6 +241,24 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
   .jgrid.panel{grid-template-columns:1fr}
   .firstrun .badge{font-size:1.3rem}
 }
+
+/* exam-day visual */
+.xw{display:flex;align-items:stretch;justify-content:center;gap:14px;flex-wrap:wrap;margin:0 auto 30px;max-width:720px}
+.xw-day{flex:1 1 220px;background:var(--forest);color:#fff;border-radius:16px;padding:18px 22px;text-align:center;display:flex;flex-direction:column;gap:4px}
+.xw-day .xw-d{font-size:.72rem;font-weight:600;letter-spacing:.2em;color:var(--gold-soft)}
+.xw-day b{font-family:"Cormorant Garamond",serif;font-size:1.55rem;font-weight:600}
+.xw-day .xw-s{font-size:.92rem;color:#d9e2dc}
+.xw-arrow{align-self:center;font-size:1.6rem;color:var(--gold)}
+.step .xi{width:46px;height:46px;border-radius:12px;background:var(--cream);display:flex;align-items:center;justify-content:center;margin-bottom:6px;color:var(--teal)}
+.xn{margin:30px auto 0;max-width:720px;background:var(--cream);border:1.5px solid var(--gold);border-radius:14px;padding:18px 22px;font-size:.98rem;line-height:1.55}
+.xn b{color:var(--forest)}
+.xt{margin:34px auto 0;max-width:900px;text-align:center}
+.xt h4{font-family:"DM Sans",system-ui,sans-serif;font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+.xt-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.xt-chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:.88rem}
+.xt-chip b{color:var(--forest)}
+.xt-note{margin-top:14px;font-size:.9rem;color:var(--muted)}
+@media(max-width:560px){.xw-arrow{display:none}}
 </style>
 </head>
 <body>
@@ -282,9 +300,9 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
       <p style="margin:0 0 14px;font-size:14.5px;"><a href="https://claude.ai/artifact/MJMyzc41bMa3fJ6S8Zk7WH" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600;">Entrepreneurship Mock Test &rarr;</a></p>
       <hr style="border:none;border-top:1px solid var(--line);margin:14px 0;">
       <strong style="color:var(--forest);">Qualifying Exam Schedule</strong>
-      <p style="margin:8px 0 0;font-size:14.5px;color:var(--ink);">Main sitting: <b>Saturday, 17 October 2026, 16:00&ndash;17:00 Hong Kong time</b> (check-in 15:40).<br>Make-up sitting: <b>Sunday, 18 October</b>, same time, for anyone who can't attend the main day.<br><br>Registered students receive their personal access code and exam link by email before the exam. This page will be updated with a direct exam link closer to the date.</p>
+      <p style="margin:8px 0 0;font-size:14.5px;color:var(--ink);">Exam window: <b>Saturday 17 &ndash; Sunday 18 October 2026</b>, opening <b>10:00 Hong Kong time</b> on the 17th. Take it at any time that suits you during the two days.<br><br>Registered students receive their access code by email. Open <b>exam.net in Google Chrome</b>, enter your code, and write your full name and surname exactly as you want them on your certificate. <a href="#take-exam" style="color:var(--teal);font-weight:600;">See the steps &darr;</a></p>
     </div>
-    <p class="micro">Registration open now &middot; $30 flat rate &middot; Qualifying exam <b>Sat 17 October, 16:00&ndash;17:00 Hong Kong time</b> (check-in 15:40) &middot; Finals <b>4&ndash;6 December, Hong Kong</b>.</p>
+    <p class="micro">Registration open now &middot; $30 flat rate &middot; Qualifying exam <b>open 17&ndash;18 October, from 10:00 Hong Kong time</b> &middot; Finals <b>4&ndash;6 December, Hong Kong</b>.</p>
   </div>
   <div class="trust">
     <div class="wrap">
@@ -363,9 +381,41 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
     <div class="steps">
       <div class="step rv"><div class="n">01</div><div class="when">Now – 1 September</div><h3>Registration</h3><p>Register individually for the $30 flat rate.</p></div>
       <div class="step rv"><div class="n">02</div><div class="when">Now – 15 October</div><h3>Prepare</h3><p>Free practice exams, glossary and Quizlet sets. Both tracks share the same exam format: 40 questions, 60 minutes.</p></div>
-      <div class="step rv"><div class="n">03</div><div class="when">17&ndash;18 October</div><h3>Qualifying exam</h3><p>Main sitting: Sat 17 October, 16:00&ndash;17:00 Hong Kong time. Make-up sitting: Sun 18 October, same time, for anyone who can't make the main day. Supervised live online &mdash; 40 questions in 60 minutes, open to entrants worldwide.</p></div>
+      <div class="step rv"><div class="n">03</div><div class="when">17&ndash;18 October</div><h3>Qualifying exam</h3><p>Take it at any time in a two-day window, opening Sat 17 October at 10:00 Hong Kong time. Online in Google Chrome at exam.net &mdash; 40 questions in 60 minutes, open to entrants worldwide.</p></div>
       <div class="step rv"><div class="n">04</div><div class="when">29&ndash;30 October</div><h3>Results &amp; finalist notification</h3><p>Every medal winner — Gold, Silver, or Bronze — is invited to the international finals in Hong Kong. A separate $100 Finals registration fee applies, covering venue costs at Hong Kong Science Park.</p></div>
       <div class="step rv"><div class="n">05</div><div class="when">4–6 December</div><h3>International finals — Hong Kong</h3><p>Financial Literacy medalists compete individually. Entrepreneurship medalists choose an Individual Round or team up (2&ndash;3 students, at least 2 present in Hong Kong) for the Team Case Challenge. Live finals, judge panel feedback, and a joint awards ceremony with A-ISPC and Emerald Prize.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO TAKE THE EXAM -->
+<section class="band" id="take-exam" style="background:#fff;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)">
+  <div class="wrap">
+    <div class="shead center rv">
+      <span class="eyebrow center">Exam day</span>
+      <h2>How to take the qualifying exam</h2>
+      <p>Four steps. The exam is open for two days, so you choose when to sit it.</p>
+    </div>
+
+    <div class="xw rv">
+      <div class="xw-day"><span class="xw-d">SATURDAY 17 OCT</span><b>Exam opens</b><span class="xw-s">10:00 Hong Kong time</span></div>
+      <div class="xw-arrow" aria-hidden="true">&rarr;</div>
+      <div class="xw-day"><span class="xw-d">SUNDAY 18 OCT</span><b>Second day</b><span class="xw-s">Second day of the exam window</span></div>
+    </div>
+
+    <div class="steps">
+      <div class="step rv"><div class="xi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18"/><path d="M12 3a14 14 0 0 0 0 18"/></svg></div><div class="when">Step 1</div><h3>Use Google Chrome</h3><p>Open Google Chrome and go to <b>exam.net</b>. Other browsers may not work well.</p></div>
+      <div class="step rv"><div class="xi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div><div class="when">Step 2</div><h3>Enter your code</h3><p>Type the access code from your email in the box at the <b>top right corner</b> of the page. Each track has its own code.</p></div>
+      <div class="step rv"><div class="xi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div><div class="when">Step 3</div><h3>Write your name</h3><p>Enter your <b>full name and surname</b> exactly as you want them printed on your certificate.</p></div>
+      <div class="step rv"><div class="xi"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></svg></div><div class="when">Step 4</div><h3>Start the exam</h3><p>Sit it any time in the two-day window. You can try your code before the exam opens to check it works &mdash; you will reach a waiting lobby.</p></div>
+    </div>
+
+    <div class="xn rv"><b>Your name will appear on your certificate.</b> The name you type on exam.net is the name we print, so check the spelling of your name and surname before you start.</div>
+
+    <div class="xt rv">
+      <h4>Exam opens at (your local time)</h4>
+      <div class="xt-row"><span class="xt-chip"><b>Hong Kong / Singapore</b> &middot; Sat 17 Oct, 10:00</span><span class="xt-chip"><b>Thailand</b> &middot; Sat 17 Oct, 09:00</span><span class="xt-chip"><b>India</b> &middot; Sat 17 Oct, 07:30</span><span class="xt-chip"><b>Kazakhstan</b> &middot; Sat 17 Oct, 07:00</span><span class="xt-chip"><b>Moscow</b> &middot; Sat 17 Oct, 05:00</span><span class="xt-chip"><b>Slovakia</b> &middot; Sat 17 Oct, 04:00</span><span class="xt-chip"><b>UK</b> &middot; Sat 17 Oct, 03:00</span><span class="xt-chip"><b>US East</b> &middot; Fri 16 Oct, 22:00</span><span class="xt-chip"><b>US West</b> &middot; Fri 16 Oct, 19:00</span></div>
+      <p class="xt-note">The exam stays open for two days, so you do not have to start at opening time.</p>
     </div>
   </div>
 </section>
@@ -504,9 +554,9 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
     </div>
     <details class="rv"><summary>Who can enter?<span class="pm"></span></summary><p>Any student in Grades 7&ndash;12, from any school, in any country. Financial Literacy is for Grades 7&ndash;9; Entrepreneurship for Grades 10&ndash;12; the Portfolio Pathway is open to all grades.</p></details>
     <details class="rv"><summary>Do students need a finance background?<span class="pm"></span></summary><p>No. This is the first edition and it&rsquo;s built to be beginner-friendly. Every registration includes free practice exams, study sets and games so a motivated first-timer can prepare from scratch.</p></details>
-    <details class="rv"><summary>What does the qualifying exam look like?<span class="pm"></span></summary><p>Both tracks share the same format: 40 questions in one 60-minute sitting, taken online. Main sitting: Sat 17 October, 16:00&ndash;17:00 Hong Kong time. Make-up sitting: Sun 18 October, same time. Results and finalist invitations follow on 29&ndash;30 October.</p></details>
+    <details class="rv"><summary>What does the qualifying exam look like?<span class="pm"></span></summary><p>Both tracks share the same format: 40 questions in one 60-minute sitting, taken online. Take it at any time in the two-day window, Sat 17 &ndash; Sun 18 October, opening at 10:00 Hong Kong time on the 17th. Results and finalist invitations follow on 29&ndash;30 October.</p></details>
     <details class="rv"><summary>What do Portfolio Pathway students receive?<span class="pm"></span></summary><p>One week of live online lessons from leading experts, plus an individual, verifiable credential built to strengthen a university application &mdash; on top of everything in the team tracks.</p></details>
-    <details class="rv"><summary>Do we have to travel?<span class="pm"></span></summary><p>The qualifying exam is online and supervised live &mdash; sit it from your own school. Main sitting: Sat 17 October, 16:00&ndash;17:00 Hong Kong time. A make-up sitting runs Sun 18 October, same time, for anyone who can't attend the main day. Only those who qualify travel, to the international finals in Hong Kong, 4&ndash;6 December. Optional group travel packages are available &mdash; <a href="/assets/A-IBFC_HK_Finals_Travel_Packages.pdf" target="_blank" rel="noopener">see current estimated rates</a> or contact us for group pricing.</p></details>
+    <details class="rv"><summary>Do we have to travel?<span class="pm"></span></summary><p>The qualifying exam is online &mdash; sit it from wherever you are, using Google Chrome. The exam window is two days, Sat 17 &ndash; Sun 18 October, opening at 10:00 Hong Kong time on the 17th. Only those who qualify travel, to the international finals in Hong Kong, 4&ndash;6 December. Optional group travel packages are available &mdash; <a href="/assets/A-IBFC_HK_Finals_Travel_Packages.pdf" target="_blank" rel="noopener">see current estimated rates</a> or contact us for group pricing.</p></details>
     <details class="rv"><summary>Can Entrepreneurship students compete as a team at Finals?<span class="pm"></span></summary><p>Yes. The qualifying exam is always individual, but Entrepreneurship medalists can team up with 2&ndash;3 fellow medalists for the Hong Kong Finals Team Case Challenge, with at least 2 team members present in Hong Kong to compete. Financial Literacy stays an individual competition throughout, including at Finals.</p></details>
     <details class="rv"><summary>What does every participant get?<span class="pm"></span></summary><p>An official certificate. Within each country round, entrants are also recognized by score: the top 20% receive Gold, the next 30% Silver, and the remaining 50% Bronze medals. Finalists additionally earn distinction certificates and trophies, plus written feedback from the judging panel.</p></details>
     <details class="rv"><summary>How and when do we pay?<span class="pm"></span></summary><p>Registration opened 1 July 2026 and is paid securely online by card. Standard pricing is $30 per entry, all tracks.</p></details>
@@ -525,7 +575,7 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
       <a class="btn btn-gold" href="https://whop.com/checkout/plan_gqbrnbyMy4d9s">Register &mdash; $30</a>
       <a class="btn btn-ghost" href="mailto:emeraldhv@nurbakyt.com?subject=A-IBFC%20Enquiry">Talk to the team</a>
     </div>
-    <p class="micro">Qualifying exam Sat 17 Oct, 16:00 Hong Kong time · Results 29&ndash;30 October · International finals 4&ndash;6 December, Hong Kong</p>
+    <p class="micro">Qualifying exam open 17&ndash;18 Oct (from 10:00 Hong Kong time) · Results 29&ndash;30 October · International finals 4&ndash;6 December, Hong Kong</p>
   </div>
 </section>
 
