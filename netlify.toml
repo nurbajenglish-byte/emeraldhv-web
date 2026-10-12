@@ -98,6 +98,18 @@
   force = true
 
 [[redirects]]
+  from = "https://aibfc.org/mock"
+  to = "/aibfc-mock.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "https://www.aibfc.org/mock"
+  to = "/aibfc-mock.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "https://aibfc.org/prep"
   to = "/aibfc-prep.html"
   status = 200
